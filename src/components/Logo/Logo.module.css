@@ -1,0 +1,7 @@
+@import '@alfalab/core-components/vars/colors.css';
+
+.logoTitle {
+    display: inline-block;
+    line-height: 1 !important;
+    color: var(--color-red-brand);
+}
