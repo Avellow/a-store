@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Styrene UI';
+    src: url('StyreneAWeb-Regular.woff2') format('woff2'),
+    url('StyreneAWeb-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Styrene UI';
+    src: url('StyreneAWeb-Medium.woff2') format('woff2'),
+         url('StyreneAWeb-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Styrene UI';
+    src: url('StyreneAWeb-Bold.woff2') format('woff2'),
+         url('StyreneAWeb-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}

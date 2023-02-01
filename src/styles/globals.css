@@ -1,0 +1,26 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--black);
+
+    font-family: var(--font-family);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #3B434E;
+    --font-family: "Styrene UI", system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif, sans-serif;
+}
