@@ -1,0 +1,16 @@
+.linkBlock {
+    display: block;
+    background: black;
+    height: 100%;
+}
+
+.imgWrapper {
+    padding: 25px 15px;
+    height: 100%;
+    cursor: pointer;
+    transition: opacity ease-in 0.3s;
+}
+
+.imgWrapper:hover {
+    opacity: 0.7;
+}

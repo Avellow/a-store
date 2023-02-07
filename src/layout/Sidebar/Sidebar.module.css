@@ -1,0 +1,40 @@
+.sidebar {
+    background-color: black;
+    height: 100%;
+}
+
+.sidePanel {
+    max-width: 400px;
+}
+
+.sidePanelContent {
+    background: black;
+    color: white;
+}
+
+.sidePanelHeader {
+    display: flex;
+    justify-content: flex-end !important;
+}
+
+.closeIcon {
+    color: white;
+}
+
+.closeButton:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 640px){
+    .sidePanelContent {
+        background: white;
+    }
+
+    .closeIcon {
+        color: black;
+    }
+
+    .policyText {
+        color: black;
+    }
+}

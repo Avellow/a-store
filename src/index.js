@@ -7,9 +7,11 @@ import {BrowserRouter} from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <React.StrictMode>
+    // СТРИКТ МОД отключен в связи с ошибкой библиотеки core-components (метод findDOMNode запрещен)
+    // необходимо выяснить, как исправить
+    /*<React.StrictMode>*/
         <BrowserRouter>
             <App/>
         </BrowserRouter>
-    </React.StrictMode>
+    /*</React.StrictMode>*/
 );

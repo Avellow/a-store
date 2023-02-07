@@ -1,0 +1,13 @@
+.row {
+    height: 100%;
+}
+
+.blocks {
+    margin-bottom: -50.5px;
+}
+
+@media screen and (max-width: 599px) {
+    .blocks {
+        margin-bottom: 0;
+    }
+}

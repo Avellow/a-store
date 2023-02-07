@@ -5,3 +5,9 @@
     padding: 15px;
     gap: 10px;
 }
+
+@media screen and (max-width: 640px){
+    .menuText {
+        display: none;
+    }
+}

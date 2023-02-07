@@ -1,12 +1,16 @@
-import {withLayout} from "../layout/Layout";
+import {Layout} from "../layout";
 import {PageProps} from "./Page.props";
 
 const Page = ({ children }: PageProps): JSX.Element => {
     return (
-        <>
-            { children }
-        </>
-    )
-}
+        <Layout>
+            <Layout.Header />
+            <Layout.Body>
+                { children }
+            </Layout.Body>
+            <Layout.Footer />
+        </Layout>
+    );
+};
 
-export default withLayout(Page)
+export default Page;

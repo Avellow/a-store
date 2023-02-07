@@ -1,5 +1,6 @@
 import styles from "./Logo.module.css";
 import {Typography} from "@alfalab/core-components/typography";
+import {Link} from "react-router-dom";
 
 export const Logo = (): JSX.Element => {
     return (
@@ -9,7 +10,7 @@ export const Logo = (): JSX.Element => {
             weight='bold'
             className={styles.logoTitle}
         >
-            A-Store
+            <Link to='/'>A-Store</Link>
         </Typography.Title>
     )
 };
