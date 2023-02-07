@@ -1,0 +1,15 @@
+.menuList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.linkText {
+    color: white;
+}
+
+@media screen and (max-width: 640px){
+    .linkText {
+        color: black;
+    }
+}

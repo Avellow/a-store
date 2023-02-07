@@ -1,26 +1,29 @@
 import {routerType} from "./router.types";
-import {Basket, Contacts, MadeInAlfa, NotFound, YourDesign} from "../page-components";
+import {Basket, Contacts, Home, MadeInAlfa, NotFound, YourDesign} from "../page-components";
 
 export const pagesData: routerType[] = [
     {
         path: '',
-        element: <MadeInAlfa />,
+        element: <Home />,
         title: 'home'
     },
     {
         path: 'made-in-alfa',
         element: <MadeInAlfa />,
-        title: 'madeInAlfa'
+        title: 'madeInAlfa',
+        linkTitle: 'Сделано в альфе'
     },
     {
         path: 'your-design',
         element: <YourDesign />,
-        title: 'yourDesign'
+        title: 'yourDesign',
+        linkTitle: 'Свой дизайн'
     },
     {
         path: 'contacts',
         element: <Contacts />,
-        title: 'contacts'
+        title: 'contacts',
+        linkTitle: 'Контакты'
     },
     {
         path: 'basket',
