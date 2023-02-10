@@ -1,11 +1,11 @@
 import {Layout} from "../layout";
 import {PageProps} from "./Page.props";
 
-const Page = ({ children }: PageProps): JSX.Element => {
+const Page = ({ children, ...restProps }: PageProps): JSX.Element => {
     return (
         <Layout>
             <Layout.Header />
-            <Layout.Body>
+            <Layout.Body {...restProps}>
                 { children }
             </Layout.Body>
             <Layout.Footer />

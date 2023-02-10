@@ -1,5 +1,5 @@
-import {routerType} from "./router.types";
-import {Basket, Contacts, Home, MadeInAlfa, NotFound, YourDesign} from "../page-components";
+import { routerType } from "./router.types";
+import { Basket, Contacts, Home, MadeInAlfa, NotFound, YourDesign } from "../page-components";
 
 export const pagesData: routerType[] = [
     {
@@ -11,7 +11,7 @@ export const pagesData: routerType[] = [
         path: 'made-in-alfa',
         element: <MadeInAlfa />,
         title: 'madeInAlfa',
-        linkTitle: 'Сделано в альфе'
+        linkTitle: 'Сделано в Альфе'
     },
     {
         path: 'your-design',
