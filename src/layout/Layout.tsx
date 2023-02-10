@@ -16,8 +16,8 @@ const LayoutHeader = (): JSX.Element => (
     <Header className={styles.header} />
 );
 
-const LayoutBody = ({ children, className }: BodyProps): JSX.Element => (
-    <main className={cn(className, styles.body)}>
+const LayoutBody = ({ children, className, ...restProps }: BodyProps): JSX.Element => (
+    <main className={cn(className, styles.body)} {...restProps}>
         { children }
     </main>
 );

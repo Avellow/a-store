@@ -15,6 +15,7 @@ export const Home = (): JSX.Element => {
                             title='Сделано в Альфе'
                             imgUrl={leftImageUrl}
                             to='/made-in-alfa'
+                            data-testid='made-in-alfa-block-link'
                         />
                     </Grid.Col>
                     <Grid.Col width={{ mobile: 12, tablet: 6, desktop: 6 }}>
@@ -22,6 +23,7 @@ export const Home = (): JSX.Element => {
                             title='Свой дизайн'
                             imgUrl={rightImageUrl}
                             to='/your-design'
+                            data-testid='your-design-block-link'
                         />
                     </Grid.Col>
                 </Grid.Row>

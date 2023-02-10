@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component Home snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="wrapper"
+      >
+        <header
+          class="header header"
+        >
+          <h1
+            class="typography__component_h1nzy logoTitle typography__styrene-medium_k22x5 typography__bold_h1nzy"
+          >
+            <a
+              href="/"
+            >
+              A-Store
+            </a>
+          </h1>
+          <button
+            class="button__component_onnkc button__ghost_onnkc button__m_onnkc button__component_1qjkj button__ghost_1qjkj button__withLeftAddons_onnkc"
+            type="button"
+          >
+            <span
+              class="button__addons_onnkc"
+            >
+              <svg
+                fill="currentColor"
+                focusable="false"
+                height="35"
+                role="img"
+                viewBox="0 0 24 24"
+                width="35"
+              >
+                <path
+                  d="M3 13.25h18v-2.5H3v2.5zm0-7.5v2.5h18v-2.5H3zm0 12.5h18v-2.5H3v2.5z"
+                />
+              </svg>
+            </span>
+            <span
+              class="button__text_onnkc"
+            >
+              <span
+                class="menuText"
+              >
+                меню
+              </span>
+            </span>
+          </button>
+        </header>
+        <main
+          class="blocks body"
+        >
+          <div
+            class="grid__row_1gt5e grid__component_xpkmx grid__between_xpkmx row"
+          >
+            <div
+              class="grid__col_1gt5e grid__component_17rb3 grid__width-mobile-12_17rb3 grid__width-tablet-6_17rb3 grid__width-desktop-6_17rb3"
+            >
+              <a
+                class="linkBlock"
+                data-testid="made-in-alfa-block-link"
+                href="/made-in-alfa"
+              >
+                <div
+                  class="imgWrapper"
+                  style="background: url(/img/frame46.jpeg) top; background-size: cover;"
+                >
+                  <h2
+                    class="typography__component_h1nzy typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
+                  >
+                    Сделано в Альфе
+                  </h2>
+                </div>
+              </a>
+            </div>
+            <div
+              class="grid__col_1gt5e grid__component_17rb3 grid__width-mobile-12_17rb3 grid__width-tablet-6_17rb3 grid__width-desktop-6_17rb3"
+            >
+              <a
+                class="linkBlock"
+                data-testid="your-design-block-link"
+                href="/your-design"
+              >
+                <div
+                  class="imgWrapper"
+                  style="background: url(/img/frame45.jpeg) top; background-size: cover;"
+                >
+                  <h2
+                    class="typography__component_h1nzy typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
+                  >
+                    Свой дизайн
+                  </h2>
+                </div>
+              </a>
+            </div>
+          </div>
+        </main>
+        <footer
+          class="footer footer"
+        >
+          <span
+            class="rights typography__primary-small_xcdcz typography__medium_xcdcz"
+          >
+            © ООО "Альфа Фьюче Пипл", 
+            2023
+          </span>
+        </footer>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="wrapper"
+    >
+      <header
+        class="header header"
+      >
+        <h1
+          class="typography__component_h1nzy logoTitle typography__styrene-medium_k22x5 typography__bold_h1nzy"
+        >
+          <a
+            href="/"
+          >
+            A-Store
+          </a>
+        </h1>
+        <button
+          class="button__component_onnkc button__ghost_onnkc button__m_onnkc button__component_1qjkj button__ghost_1qjkj button__withLeftAddons_onnkc"
+          type="button"
+        >
+          <span
+            class="button__addons_onnkc"
+          >
+            <svg
+              fill="currentColor"
+              focusable="false"
+              height="35"
+              role="img"
+              viewBox="0 0 24 24"
+              width="35"
+            >
+              <path
+                d="M3 13.25h18v-2.5H3v2.5zm0-7.5v2.5h18v-2.5H3zm0 12.5h18v-2.5H3v2.5z"
+              />
+            </svg>
+          </span>
+          <span
+            class="button__text_onnkc"
+          >
+            <span
+              class="menuText"
+            >
+              меню
+            </span>
+          </span>
+        </button>
+      </header>
+      <main
+        class="blocks body"
+      >
+        <div
+          class="grid__row_1gt5e grid__component_xpkmx grid__between_xpkmx row"
+        >
+          <div
+            class="grid__col_1gt5e grid__component_17rb3 grid__width-mobile-12_17rb3 grid__width-tablet-6_17rb3 grid__width-desktop-6_17rb3"
+          >
+            <a
+              class="linkBlock"
+              data-testid="made-in-alfa-block-link"
+              href="/made-in-alfa"
+            >
+              <div
+                class="imgWrapper"
+                style="background: url(/img/frame46.jpeg) top; background-size: cover;"
+              >
+                <h2
+                  class="typography__component_h1nzy typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
+                >
+                  Сделано в Альфе
+                </h2>
+              </div>
+            </a>
+          </div>
+          <div
+            class="grid__col_1gt5e grid__component_17rb3 grid__width-mobile-12_17rb3 grid__width-tablet-6_17rb3 grid__width-desktop-6_17rb3"
+          >
+            <a
+              class="linkBlock"
+              data-testid="your-design-block-link"
+              href="/your-design"
+            >
+              <div
+                class="imgWrapper"
+                style="background: url(/img/frame45.jpeg) top; background-size: cover;"
+              >
+                <h2
+                  class="typography__component_h1nzy typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
+                >
+                  Свой дизайн
+                </h2>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+      <footer
+        class="footer footer"
+      >
+        <span
+          class="rights typography__primary-small_xcdcz typography__medium_xcdcz"
+        >
+          © ООО "Альфа Фьюче Пипл", 
+          2023
+        </span>
+      </footer>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
