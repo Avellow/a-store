@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { ProductCard } from '../../components';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { cardsActions, cardsSelector, hasErrorSelector, isLoadingSelector } from '../../store/cards';
 import Page from "../Page";
 import styles from './MadeInAlfa.module.css';
 import { Typography } from "@alfalab/core-components/typography";
 import { madeInAlfaSubtitleText, madeInAlfaTitleText } from '../../vendor/constants';
+import { CardsContainer } from '../../components/';
 
 export const MadeInAlfa = (): JSX.Element => {
     const dispatch = useAppDispatch();
@@ -41,11 +41,7 @@ export const MadeInAlfa = (): JSX.Element => {
 
             {
                 (cards && cards.length) ? (
-                    <div className={styles.productsContainer}>
-                        {
-                            cards.map(card => <ProductCard {...card} key={card.id} />)
-                        }
-                    </div>
+                    <CardsContainer cards={cards} />
                 ) : (
                     <Typography.Title
                         tag='div'

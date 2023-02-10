@@ -22,20 +22,20 @@ export const ProductCard = ({
 
             <Typography.TitleResponsive
                 view='xsmall'
-                tag='div'
+                tag='h3'
                 weight='bold'
                 className={styles.title}
             >
                 {title}
             </Typography.TitleResponsive>
 
-            <Typography.TitleResponsive view='small' tag='div'>
+            <Typography.Text view='primary-large' tag='p'>
                 <Amount
                     value={price}
                     currency='RUB'
                     minority={0}
                 />
-            </Typography.TitleResponsive>
+            </Typography.Text>
         </div>
     );
 };
