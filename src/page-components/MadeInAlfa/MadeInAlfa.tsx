@@ -18,27 +18,11 @@ export const MadeInAlfa = (): JSX.Element => {
     }, []);
 
     return (
-        <Page data-testid='made-in-alfa-page'>
-
-            <Typography.Title
-                tag="h2"
-                view='xlarge'
-                weight='bold'
-                color='primary'
-                className={styles.pageTitle}
-                dataTestId='made-in-alfa-title'
-            >
-                {madeInAlfaTitleText}
-            </Typography.Title>
-            <Typography.Title
-                tag='div'
-                view='xsmall'
-                color='primary'
-                className={styles.pageSubtitle}
-            >
-                {madeInAlfaSubtitleText}
-            </Typography.Title>
-
+        <Page
+            data-testid='made-in-alfa-page'
+            title={madeInAlfaTitleText}
+            subtitle={madeInAlfaSubtitleText}
+        >
             {
                 (cards && cards.length) ? (
                     <CardsContainer cards={cards} />
