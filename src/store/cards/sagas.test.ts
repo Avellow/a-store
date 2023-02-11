@@ -1,15 +1,15 @@
 import { call, put } from "redux-saga/effects";
 import { cardsActions } from ".";
-import { getCards } from "../../api/cards";
+import { getProducts } from "../../api/cards";
 import { madeInAlfaTestProducts } from "../../tests/helpers/products";
-import { getCardsSaga } from "./sagas";
+import { getProductsSaga } from "./sagas";
 
 describe("fetch products", () => {
   it("should fetch products data", () => {
-    const g = getCardsSaga();
+    const g = getProductsSaga();
 
     // сравнение инструкций
-    expect(g.next().value).toEqual(call(getCards));
+    expect(g.next().value).toEqual(call(getProducts));
 
     expect(g.next(madeInAlfaTestProducts).value).toEqual(
       put(cardsActions.success(madeInAlfaTestProducts))
@@ -19,7 +19,7 @@ describe("fetch products", () => {
   });
 
   it("should put error message if error was thrown", () => {
-    const g = getCardsSaga();
+    const g = getProductsSaga();
 
     const errorMessage = "Request failed";
 

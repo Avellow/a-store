@@ -8,6 +8,7 @@ import { rootSaga } from "./root-saga";
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
+  // TODO: отрефакторить названия
   reducer: {
     cards: cardsReducer,
     groups: groupsReducer,
