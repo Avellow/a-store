@@ -6,7 +6,7 @@ type CardType = {
   availability: boolean;
 };
 
-type size = "XS" | "S" | "M" | "L" | "XL";
+type size = "XXS" | "XS" | "S" | "M" | "L" | "XL" | "XXL";
 
 type Product = {
   id: number;
@@ -16,7 +16,7 @@ type Product = {
   subtitle: string;
   price: number;
   description: string;
-  colors: string;
+  colors: string[];
   sizes: size[];
   stickerNumbers: number[];
   availability: boolean;
@@ -25,7 +25,7 @@ type Product = {
 type ProductsGroup = {
   id: number;
   title: string;
-  description: "Тактильный антистресс";
+  description: string;
   products: Product[];
 };
 
