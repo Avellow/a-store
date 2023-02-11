@@ -6,9 +6,15 @@ import { ProductCard } from '../ProductCard/ProductCard';
 export const CardsContainer = ({ className, cards, ...restProps }: CardsContainerProps): JSX.Element => {
     return (
         <div className={cn(className, styles.container)} {...restProps}>
-            {
-                cards.map(card => <ProductCard {...card} key={card.id} />)
-            }
+            <ul className={styles.list}>
+                {
+                    cards.map(card => (
+                        <li key={card.id} className={styles.item}>
+                            <ProductCard {...card} />
+                        </li>
+                    ))
+                }
+            </ul>
         </div>
     );
 };
