@@ -1,10 +1,10 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CardType } from "../../types/api";
+import { ProductType } from "../../types/api";
 
 const CARDS_SLICE_NAME = "cards";
 
 type CardsStateType = {
-  cards: CardType[];
+  cards: ProductType[];
   isLoading: boolean;
   hasError: boolean;
 };
@@ -20,7 +20,7 @@ const request: CaseReducer<CardsStateType> = (state) => {
   state.hasError = false;
 };
 
-const success: CaseReducer<CardsStateType, PayloadAction<CardType[]>> = (
+const success: CaseReducer<CardsStateType, PayloadAction<ProductType[]>> = (
   state,
   action
 ) => {

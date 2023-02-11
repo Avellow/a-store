@@ -1,24 +1,16 @@
-type CardType = {
-  id: number;
-  preview: string;
-  title: string;
-  price: number;
-  availability: boolean;
-};
-
 type size = "XXS" | "XS" | "S" | "M" | "L" | "XL" | "XXL";
 
-type Product = {
+export type ProductType = {
   id: number;
   preview: string;
-  images: string[];
+  images?: string[];
   title: string;
-  subtitle: string;
+  subtitle?: string;
   price: number;
-  description: string;
-  colors: string[];
-  sizes: size[];
-  stickerNumbers: number[];
+  description?: string;
+  colors?: string[];
+  sizes?: size[];
+  stickerNumbers?: number[];
   availability: boolean;
 };
 
@@ -26,7 +18,7 @@ type ProductsGroup = {
   id: number;
   title: string;
   description: string;
-  products: Product[];
+  products: ProductType[];
 };
 
-export { CardType, ProductsGroup, Product };
+export { ProductsGroup, ProductType as Product };
