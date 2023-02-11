@@ -3,6 +3,7 @@ import { Group } from '../../components';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { groupsActions, groupsSelector } from '../../store/products-groups';
 import { yourDesignSubtitleText, yourDesignTitleText } from '../../vendor/constants';
+import { Typography } from "@alfalab/core-components/typography";
 import Page from "../Page";
 
 export const YourDesign = (): JSX.Element => {
@@ -21,12 +22,21 @@ export const YourDesign = (): JSX.Element => {
             subtitle={yourDesignSubtitleText}
         >
             {
-                groups && groups.map((group) => (
+                (groups && groups.length) ? groups.map((group) => (
                     <Group
                         group={group}
                         key={group.id}
+                        data-testid='your-design-group'
                     />
-                ))
+                )) : (
+                    <Typography.Title
+                        tag='div'
+                        view='xsmall'
+                        color='primary'
+                    >
+                        Товар не найден
+                    </Typography.Title>
+                )
             }
         </Page>
     );

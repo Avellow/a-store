@@ -18,7 +18,7 @@ const Page = ({ children, title, subtitle, className, ...restProps }: PageProps)
                             font='styrene'
                             color='primary'
                             className={styles.pageTitle}
-                            dataTestId='made-in-alfa-title'
+                            dataTestId='page-title'
                         >
                             {title}
                         </Typography.Title>

@@ -7,7 +7,7 @@ export const testingGroups: ProductsGroup[] = [
     description: "Описание тестовой группы 1",
     products: [
       {
-        id: 5,
+        id: 1,
         preview: "http://43306375.jpeg",
         images: [
           "http://43306375.jpeg",
@@ -29,7 +29,7 @@ export const testingGroups: ProductsGroup[] = [
         availability: true,
       },
       {
-        id: 5,
+        id: 2,
         preview: "http://43306375.jpeg",
         images: [
           "http://43306375.jpeg",
@@ -51,7 +51,7 @@ export const testingGroups: ProductsGroup[] = [
         availability: true,
       },
       {
-        id: 5,
+        id: 3,
         preview: "http://43306375.jpeg",
         images: [
           "http://43306375.jpeg",
