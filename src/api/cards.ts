@@ -19,3 +19,15 @@ export const getProduct = async (
 export const getGroups = (): Promise<ProductsGroup[]> => {
   return axios.get(groupsUrl).then((response) => response.data.groups);
 };
+
+export const getGroupProduct = async (
+  id: number
+): Promise<ProductType | undefined> => {
+  const groups = await getGroups();
+  let product;
+  for (let group of groups) {
+    product = group.products.find((p) => p.id === id);
+    if (product) break;
+  }
+  return product;
+};
