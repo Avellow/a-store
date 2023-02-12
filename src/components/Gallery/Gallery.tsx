@@ -25,17 +25,27 @@ export const Gallery = ({ images, initialImage }: GalleryProps): JSX.Element => 
       </div>
       <ul className={styles.imgList}>
         {
-          images.map((img, i) => (
-            <li key={i} className={cn(styles.imgItem, {
-              [styles.itemActive]: img === activeImg
-            })}>
+          !images.length ? (
+            <li className={cn(styles.imgItem, styles.itemActive)}>
               <img
                 onClick={handleImgVarClick}
-                src={img}
-                alt={`вариант товара ${i + 1}`}
+                src={initialImage}
+                alt='вариант товара'
               />
             </li>
-          ))
+          ) : (
+            images.map((img, i) => (
+              <li key={i} className={cn(styles.imgItem, {
+                [styles.itemActive]: img === activeImg
+              })}>
+                <img
+                  onClick={handleImgVarClick}
+                  src={img}
+                  alt={`вариант товара ${i + 1}`}
+                />
+              </li>
+            ))
+          )
         }
       </ul>
     </div>
