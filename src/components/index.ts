@@ -4,3 +4,4 @@ export * from "./ProductCard/ProductCard";
 export * from "./Group/Group";
 export * from "./CardsContainer/CardsContainer";
 export * from "./Gallery/Gallery";
+export * from "./ConfigForm/ConfigForm";

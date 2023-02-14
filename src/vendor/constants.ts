@@ -17,3 +17,26 @@ export const makeLineBreaks = (string: string) => {
 
   return string.replace(regexToChange, "\n");
 };
+
+// опции для формы товара
+// TODO: разнести по файлам именованные разделы, чтобы файл не разрастался
+interface IColorsLib {
+  [index: string]: string;
+}
+
+export const engToRusColorsLib: IColorsLib = {
+  white: "белый",
+  black: "черный",
+  green: "зеленый",
+  red: "красный",
+  gray: "серый",
+};
+
+export const translateColorRu = (color: string): string =>
+  engToRusColorsLib[color] || color;
+
+const techPark =
+  "Посмотреть и потрогать все стикеры можно в A-Store на Технопарке. А ещё там можно добавить сразу несколько стикеров на одну вещь.";
+
+export const formDescription = (str: string | undefined): string | undefined =>
+  str && str.replace(techPark, `\n \n ${techPark}`);

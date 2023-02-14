@@ -10,6 +10,8 @@ export type ProductType = {
   description?: string;
   colors?: string[];
   sizes?: size[];
+  models?: string[];
+  stickers?: string[];
   stickerNumbers?: number[];
   availability: boolean;
 };

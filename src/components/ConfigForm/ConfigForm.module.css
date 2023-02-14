@@ -1,0 +1,11 @@
+.configForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 290px;
+  gap: 15px;
+  padding: 15px 0;
+}
+
+.select {
+  width: 100%;
+}

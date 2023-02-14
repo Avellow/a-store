@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.section {
+  width: 100%;
+  max-width: 500px;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.description {
+  padding-right: 50px;
+  line-height: 1.5;
+  margin-top: 30px;
+  white-space: pre-line;
+}
+
+@media screen and (max-width: 770px) {
+  .container {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .section:last-of-type {
+    margin-top: 30px;
+  }
+
+  .description {
+    padding: 0 10px;
+  }
+
+  .configForm {
+    margin: 0 auto;
+  }
+}
