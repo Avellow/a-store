@@ -60,7 +60,7 @@ export const ConfigForm = ({ productOptions, className }: ConfigFormProps): JSX.
     selected ? <SelectedOption {...selected} /> : null
 
   return (
-    <form className={cn(className, styles.configForm)}>
+    <form className={cn(className, styles.configForm)} data-test-id='product-config-form'>
       {
         options.colors && (
           <Select
@@ -73,6 +73,7 @@ export const ConfigForm = ({ productOptions, className }: ConfigFormProps): JSX.
             options={options.colors}
             Option={RuColorOption}
             valueRenderer={valueRenderer}
+            dataTestId='color-select'
           />
         )
       }
@@ -86,6 +87,7 @@ export const ConfigForm = ({ productOptions, className }: ConfigFormProps): JSX.
             name='sizes'
             placeholder='Выберете размер'
             options={options.sizes}
+            dataTestId='size-select'
           />
         )
       }
@@ -99,6 +101,7 @@ export const ConfigForm = ({ productOptions, className }: ConfigFormProps): JSX.
             name='models'
             placeholder='Выберете модель'
             options={options.models}
+            dataTestId='model-select'
           />
         )
       }
@@ -112,10 +115,11 @@ export const ConfigForm = ({ productOptions, className }: ConfigFormProps): JSX.
             label='стикер'
             placeholder='Номер стикера'
             options={options.stickerNumbers}
+            dataTestId='sticker-select'
           />
         )
       }
-      <Button view='primary'>
+      <Button view='primary' data-test-id='confirm'>
         В корзину
       </Button>
     </form>

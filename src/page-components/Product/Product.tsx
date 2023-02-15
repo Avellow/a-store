@@ -11,8 +11,9 @@ import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
 import { ConfigForm } from '../../components/';
 import { formDescription } from '../../vendor/constants';
+import { SelectOptions } from '../../components/ConfigForm/ConfigForm.props';
 
-export const Product = ({ type }: ProductProps): JSX.Element => {
+export const Product = ({ type = 'alfa' }: ProductProps): JSX.Element => {
 
   const { id } = useParams();
 
@@ -30,13 +31,13 @@ export const Product = ({ type }: ProductProps): JSX.Element => {
 
   if (!product) {
     return (
-      <Page>
+      <Page data-test-id='product-not-found'>
         <NotFound />
       </Page>
     );
   };
 
-  const productOptions: Pick<ProductType, "sizes" | "colors" | "models" | "stickerNumbers"> = {
+  const productOptions: SelectOptions = {
     sizes: product.sizes,
     colors: product.colors,
     models: product.models,
@@ -44,14 +45,15 @@ export const Product = ({ type }: ProductProps): JSX.Element => {
   }
 
   return (
-    <Page className={styles.container}>
+    <Page className={styles.container} data-test-id='product-page'>
       <div className={styles.section}>
         <Gallery
+          dataTestId='gallery'
           images={product.images || []}
           initialImage={product.preview}
         />
       </div>
-      <div className={styles.section}>
+      <div className={styles.section} data-test-id='description'>
         <Typography.TitleResponsive
           tag='h3'
           view='small'
