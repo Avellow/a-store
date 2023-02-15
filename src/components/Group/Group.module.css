@@ -1,0 +1,44 @@
+@import "@alfalab/core-components/vars/colors.css";
+
+.group {
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 110px;
+  line-height: 1;
+  margin-bottom: 15px;
+  white-space: pre-wrap;
+  color: var(--color-red-brand);
+}
+
+.subtitle {
+  font-size: 24px;
+  line-height: 1;
+}
+
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 75px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .title {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .group {
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}

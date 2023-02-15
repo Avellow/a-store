@@ -1,3 +1,3 @@
-import { CardType } from "../../types/api";
+import { ProductType } from "../../types/api";
 
-export interface ProductProps extends CardType {}
+export interface ProductProps extends ProductType {}

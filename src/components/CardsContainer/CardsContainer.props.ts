@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { ProductType } from "../../types/api";
 
-export interface PageProps
+export interface CardsContainerProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  title?: string;
-  subtitle?: string;
+  cards: ProductType[];
 }

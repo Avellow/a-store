@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { ProductsGroup } from "../../types/api";
 
-export interface PageProps
+export interface GroupProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  title?: string;
-  subtitle?: string;
+  group: ProductsGroup;
 }
