@@ -2,30 +2,24 @@ import { Amount } from '@alfalab/core-components/amount';
 import { Typography } from '@alfalab/core-components/typography';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
-import { getProduct, getCustomProduct } from '../../api/cards';
+import { getProduct } from '../../api/astore';
 import { Gallery } from '../../components';
 import { ProductType } from '../../types/api';
 import { NotFound } from '../NotFound/NotFound';
-import Page from '../Page'
-import { ProductProps } from './Product.props';
+import Page from '../Page';
 import styles from './Product.module.css';
 import { ConfigForm } from '../../components/';
 import { formDescription } from '../../vendor/constants';
 import { SelectOptions } from '../../components/ConfigForm/ConfigForm.props';
 
-export const Product = ({ type = 'alfa' }: ProductProps): JSX.Element => {
+export const Product = (): JSX.Element => {
 
   const { id } = useParams();
 
   const [product, setProduct] = useState<ProductType | null>(null);
 
   useEffect(() => {
-    // ВРЕМЕННОЕ РЕШЕНИЕ ДЛЯ ЗАГЛУШЕК
-    if (type === 'alfa') {
-      getProduct(Number(id)).then(card => card && setProduct(card));
-    } else {
-      getCustomProduct(Number(id)).then(card => card && setProduct(card));
-    }
+    getProduct(Number(id)).then(card => card && setProduct(card));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

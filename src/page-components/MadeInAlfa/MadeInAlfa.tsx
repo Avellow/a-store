@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { cardsActions, cardsSelector, hasErrorSelector, isLoadingSelector } from '../../store/cards';
+import { productsActions, productsSelector, hasErrorSelector, isLoadingSelector } from '../../store/alfa-products';
 import Page from "../Page";
 import styles from './MadeInAlfa.module.css';
 import { Typography } from "@alfalab/core-components/typography";
@@ -8,35 +8,35 @@ import { madeInAlfaSubtitleText, madeInAlfaTitleText } from '../../vendor/consta
 import { CardsContainer } from '../../components/';
 
 export const MadeInAlfa = (): JSX.Element => {
-    const dispatch = useAppDispatch();
-    const cards = useAppSelector(cardsSelector);
-    const isLoading = useAppSelector(isLoadingSelector);
-    const hasError = useAppSelector(hasErrorSelector);
+  const dispatch = useAppDispatch();
+  const cards = useAppSelector(productsSelector);
+  const isLoading = useAppSelector(isLoadingSelector);
+  const hasError = useAppSelector(hasErrorSelector);
 
-    useEffect(() => {
-        dispatch(cardsActions.request());
-    }, []);
+  useEffect(() => {
+    dispatch(productsActions.request());
+  }, []);
 
-    return (
-        <Page
-            data-testid='made-in-alfa-page'
-            title={madeInAlfaTitleText}
-            subtitle={madeInAlfaSubtitleText}
-        >
-            {
-                (cards && cards.length) ? (
-                    <CardsContainer cards={cards} />
-                ) : (
-                    <Typography.Title
-                        tag='div'
-                        view='xsmall'
-                        color='primary'
-                        className={styles.pageSubtitle}
-                    >
-                        Товар не найден
-                    </Typography.Title>
-                )
-            }
-        </Page>
-    )
+  return (
+    <Page
+      data-testid='made-in-alfa-page'
+      title={madeInAlfaTitleText}
+      subtitle={madeInAlfaSubtitleText}
+    >
+      {
+        (cards && cards.length) ? (
+          <CardsContainer cards={cards} />
+        ) : (
+          <Typography.Title
+            tag='div'
+            view='xsmall'
+            color='primary'
+            className={styles.pageSubtitle}
+          >
+            Товар не найден
+          </Typography.Title>
+        )
+      }
+    </Page>
+  )
 }

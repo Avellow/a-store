@@ -1,41 +1,41 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ProductType } from "../../types/api";
 
-const CARDS_SLICE_NAME = "cards";
+const SLICE_NAME = "alfa-products";
 
-type CardsStateType = {
-  cards: ProductType[];
+type ProductsStateType = {
+  product: ProductType[];
   isLoading: boolean;
   hasError: boolean;
 };
 
-const initialState: CardsStateType = {
-  cards: [],
+const initialState: ProductsStateType = {
+  product: [],
   isLoading: false,
   hasError: false,
 };
 
-const request: CaseReducer<CardsStateType> = (state) => {
+const request: CaseReducer<ProductsStateType> = (state) => {
   state.isLoading = true;
   state.hasError = false;
 };
 
-const success: CaseReducer<CardsStateType, PayloadAction<ProductType[]>> = (
+const success: CaseReducer<ProductsStateType, PayloadAction<ProductType[]>> = (
   state,
   action
 ) => {
   state.isLoading = false;
-  state.cards = action.payload;
+  state.product = action.payload;
   state.hasError = false;
 };
 
-const failure: CaseReducer<CardsStateType> = (state) => {
+const failure: CaseReducer<ProductsStateType> = (state) => {
   state.isLoading = false;
   state.hasError = true;
 };
 
 const cardsSlice = createSlice({
-  name: CARDS_SLICE_NAME,
+  name: SLICE_NAME,
   initialState: initialState,
   reducers: {
     request,
@@ -44,4 +44,5 @@ const cardsSlice = createSlice({
   },
 });
 
-export const { reducer: cardsReducer, actions: cardsActions } = cardsSlice;
+export const { reducer: productsReducer, actions: productsActions } =
+  cardsSlice;

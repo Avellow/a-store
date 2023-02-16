@@ -1,6 +1,6 @@
 import { call, put } from "redux-saga/effects";
 import { groupsActions } from ".";
-import { getGroups } from "../../api/cards";
+import { getYourDesignGroups } from "../../api/astore";
 import { testingGroups } from "../../tests/helpers/groups";
 import { getGroupsSaga } from "./sagas";
 
@@ -9,7 +9,7 @@ describe("fetch groups", () => {
     const g = getGroupsSaga();
 
     // сравнение инструкций
-    expect(g.next().value).toEqual(call(getGroups));
+    expect(g.next().value).toEqual(call(getYourDesignGroups));
 
     expect(g.next(testingGroups).value).toEqual(
       put(groupsActions.success(testingGroups))

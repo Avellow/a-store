@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import Router from "react-router-dom";
 
 import { renderWithRouterAndProvider } from '../../tests/helpers/renderWithRouterAndProvider';
-import * as Api from '../../api/cards';
+import * as Api from '../../api/astore';
 import { ProductType } from '../../types/api';
 
 configure({ testIdAttribute: 'data-test-id' });
