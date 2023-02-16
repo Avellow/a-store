@@ -1,19 +1,19 @@
 import { useEffect } from 'react';
-import { Group } from '../../components';
+import { CardSkeletons, Group } from '../../components';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { groupsActions, groupsSelector } from '../../store/design-groups';
+import { groupsActions, groupsSelector, isLoadingSelector } from '../../store/design-groups';
 import { yourDesignSubtitleText, yourDesignTitleText } from '../../vendor/constants';
-import { Typography } from "@alfalab/core-components/typography";
+import { NotFound } from '../NotFound/NotFound';
 import Page from "../Page";
 
 export const YourDesign = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const groups = useAppSelector(groupsSelector);
+  const isLoading = useAppSelector(isLoadingSelector);
 
   useEffect(() => {
     dispatch(groupsActions.request());
   }, []);
-
 
   return (
     <Page
@@ -21,21 +21,21 @@ export const YourDesign = (): JSX.Element => {
       title={yourDesignTitleText}
       subtitle={yourDesignSubtitleText}
     >
+      {isLoading && <CardSkeletons />}
+
       {
-        (groups && groups.length) ? groups.map((group) => (
+        groups && groups.map(group => (
           <Group
             group={group}
             key={group.id}
             data-testid='your-design-group'
           />
-        )) : (
-          <Typography.Title
-            tag='div'
-            view='xsmall'
-            color='primary'
-          >
-            Товар не найден
-          </Typography.Title>
+        ))
+      }
+
+      {
+        !isLoading && !groups.length && (
+          <span>Группы с товарами не найдены</span>
         )
       }
     </Page>

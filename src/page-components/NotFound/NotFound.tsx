@@ -1,7 +1,9 @@
+import Page from '../Page'
+
 export const NotFound = (): JSX.Element => {
-    return (
-        <>
-            404 Такой страницы не существует
-        </>
-    )
+  return (
+    <Page>
+      Страница по вашему запросу не найдена
+    </Page>
+  )
 }

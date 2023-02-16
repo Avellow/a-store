@@ -2,19 +2,18 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { productsActions, productsSelector, hasErrorSelector, isLoadingSelector } from '../../store/alfa-products';
 import Page from "../Page";
-import styles from './MadeInAlfa.module.css';
-import { Typography } from "@alfalab/core-components/typography";
 import { madeInAlfaSubtitleText, madeInAlfaTitleText } from '../../vendor/constants';
-import { CardsContainer } from '../../components/';
+import { CardsContainer, CardSkeletons } from '../../components/';
 
 export const MadeInAlfa = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const cards = useAppSelector(productsSelector);
+  const products = useAppSelector(productsSelector);
   const isLoading = useAppSelector(isLoadingSelector);
   const hasError = useAppSelector(hasErrorSelector);
 
   useEffect(() => {
     dispatch(productsActions.request());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -23,18 +22,13 @@ export const MadeInAlfa = (): JSX.Element => {
       title={madeInAlfaTitleText}
       subtitle={madeInAlfaSubtitleText}
     >
+      {isLoading && (<CardSkeletons />)}
+
+      {products && <CardsContainer cards={products} />}
+
       {
-        (cards && cards.length) ? (
-          <CardsContainer cards={cards} />
-        ) : (
-          <Typography.Title
-            tag='div'
-            view='xsmall'
-            color='primary'
-            className={styles.pageSubtitle}
-          >
-            Товар не найден
-          </Typography.Title>
+        !isLoading && !products.length && (
+          <span>Товар не найден</span>
         )
       }
     </Page>
