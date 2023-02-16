@@ -72,7 +72,8 @@ describe('Product page', () => {
   it('should show `not found page` if product not found', async () => {
     mockedGetProduct.mockReturnValue(Promise.resolve(undefined));
     renderPage();
-    const notFoundPage = await screen.findByTestId('product-not-found');
+
+    const notFoundPage = await screen.findByTestId('not-found-page');
     expect(notFoundPage).toBeInTheDocument();
   })
 })

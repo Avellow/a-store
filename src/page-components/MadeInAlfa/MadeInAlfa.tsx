@@ -22,7 +22,7 @@ export const MadeInAlfa = (): JSX.Element => {
       title={madeInAlfaTitleText}
       subtitle={madeInAlfaSubtitleText}
     >
-      {isLoading && (<CardSkeletons />)}
+      {isLoading && !products.length && (<CardSkeletons />)}
 
       {products && <CardsContainer cards={products} />}
 

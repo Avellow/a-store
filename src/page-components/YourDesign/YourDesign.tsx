@@ -3,7 +3,6 @@ import { CardSkeletons, Group } from '../../components';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { groupsActions, groupsSelector, isLoadingSelector } from '../../store/design-groups';
 import { yourDesignSubtitleText, yourDesignTitleText } from '../../vendor/constants';
-import { NotFound } from '../NotFound/NotFound';
 import Page from "../Page";
 
 export const YourDesign = (): JSX.Element => {
@@ -13,6 +12,7 @@ export const YourDesign = (): JSX.Element => {
 
   useEffect(() => {
     dispatch(groupsActions.request());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -21,7 +21,7 @@ export const YourDesign = (): JSX.Element => {
       title={yourDesignTitleText}
       subtitle={yourDesignSubtitleText}
     >
-      {isLoading && <CardSkeletons />}
+      {isLoading && !groups.length && <CardSkeletons />}
 
       {
         groups && groups.map(group => (

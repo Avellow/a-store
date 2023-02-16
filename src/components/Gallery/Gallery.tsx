@@ -5,7 +5,7 @@ import { GalleryProps } from './Gallery.props';
 
 export const Gallery = ({ images, initialImage, dataTestId }: GalleryProps): JSX.Element => {
 
-  const [activeImg, setActiveImg] = useState<string>(initialImage);
+  const [activeImg, setActiveImg] = useState(initialImage);
 
   const handleImgVarClick = (e: SyntheticEvent<HTMLImageElement>) => {
     const imgSrc = e.currentTarget.src;

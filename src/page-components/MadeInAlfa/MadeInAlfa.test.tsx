@@ -14,6 +14,10 @@ const mockedUseDispatch = jest.spyOn(reduxHooks, 'useAppDispatch');
 
 describe('Made in Alfa component', () => {
 
+  beforeEach(() => {
+    mockedUseSelector.mockReturnValue([]);
+  });
+
   it('should render product cards', () => {
     mockedUseDispatch.mockReturnValue(jest.fn());
     render();
@@ -43,11 +47,11 @@ describe('Made in Alfa component', () => {
     expect(mockedCardsRequest).toHaveBeenCalled();
   });
 
-  it('should show message if there are no products', () => {
-    mockedUseSelector.mockReturnValue([]);
+  it('should show message if there are no products', async () => {
+    mockedUseSelector.mockReturnValue(false);
     mockedUseDispatch.mockReturnValue(jest.fn());
     render();
     expect(screen.queryByTestId('made-in-alfa-product')).toBeNull();
-    expect(screen.getByText('Товар не найден')).toBeInTheDocument();
+    expect(await screen.findByText('Товар не найден')).toBeInTheDocument();
   });
 });

@@ -14,6 +14,10 @@ const mockedUseDispatch = jest.spyOn(reduxHooks, 'useAppDispatch');
 
 describe('Your Design component', () => {
 
+  beforeEach(() => {
+    mockedUseSelector.mockReturnValue([]);
+  });
+
   it('should render product groups', () => {
     mockedUseDispatch.mockReturnValue(jest.fn());
     render();
@@ -43,11 +47,14 @@ describe('Your Design component', () => {
     expect(mockedGroupsRequest).toHaveBeenCalled();
   });
 
-  it('should show message if there are no products', () => {
+  it('should show message if there are no products', async () => {
     mockedUseSelector.mockReturnValue([]);
+    mockedUseSelector.mockReturnValue(false);
     mockedUseDispatch.mockReturnValue(jest.fn());
     render();
+
     expect(screen.queryByTestId('your-design-group')).toBeNull();
-    expect(screen.getByText('Товар не найден')).toBeInTheDocument();
+    const text = await screen.findByText('Группы с товарами не найдены')
+    expect(text).toBeInTheDocument();
   });
 });
