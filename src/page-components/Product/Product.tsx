@@ -3,7 +3,7 @@ import { Typography } from '@alfalab/core-components/typography';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { getProduct } from '../../api/astore';
-import { Gallery } from '../../components';
+import { Gallery, ProductSkeleton } from '../../components';
 import { ProductType } from '../../types/api';
 import { NotFound } from '../NotFound/NotFound';
 import Page from '../Page';
@@ -17,17 +17,29 @@ export const Product = (): JSX.Element => {
   const { id } = useParams();
 
   const [product, setProduct] = useState<ProductType | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    getProduct(Number(id)).then(card => card && setProduct(card));
+    setIsLoading(true);
+    getProduct(Number(id))
+      .then(card => {
+        card && setProduct(card);
+        setIsLoading(false);
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  if (isLoading) {
+    return (
+      <Page data-test-id='product-page-loading'>
+        <ProductSkeleton />
+      </Page>
+    )
+  }
+
   if (!product) {
     return (
-      <Page data-test-id='product-not-found'>
-        <NotFound />
-      </Page>
+      <NotFound />
     );
   };
 
@@ -36,7 +48,7 @@ export const Product = (): JSX.Element => {
     colors: product.colors,
     models: product.models,
     stickerNumbers: product.stickerNumbers
-  }
+  };
 
   return (
     <Page className={styles.container} data-test-id='product-page'>

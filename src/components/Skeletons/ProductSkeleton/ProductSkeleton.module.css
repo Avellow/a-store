@@ -1,0 +1,30 @@
+.product {
+  display: flex;
+  gap: 20px;
+  height: 60%;
+  justify-content: center;
+}
+
+.gallery {
+  height: 100%;
+  max-width: 500px;
+  flex-grow: 1;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 500px;
+  flex-grow: 1;
+}
+
+.item {
+  height: 50px;
+}
+
+@media screen and (max-width: 770px) {
+  .product {
+    flex-direction: column;
+  }
+}
