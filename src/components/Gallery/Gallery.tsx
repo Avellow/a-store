@@ -3,7 +3,7 @@ import { SyntheticEvent, useState } from 'react';
 import styles from './Gallery.module.css';
 import { GalleryProps } from './Gallery.props';
 
-export const Gallery = ({ images, initialImage }: GalleryProps): JSX.Element => {
+export const Gallery = ({ images, initialImage, dataTestId }: GalleryProps): JSX.Element => {
 
   const [activeImg, setActiveImg] = useState<string>(initialImage);
 
@@ -15,7 +15,7 @@ export const Gallery = ({ images, initialImage }: GalleryProps): JSX.Element => 
   };
 
   return (
-    <div className={styles.gallery}>
+    <div className={styles.gallery} data-test-id={dataTestId}>
       <div className={styles.imgWrapper}>
         <img
           key={activeImg}
