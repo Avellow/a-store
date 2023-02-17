@@ -8,3 +8,4 @@ export * from "./ConfigForm/ConfigForm";
 export * from "./Skeletons/CardSkeleton/CardSkeleton";
 export * from "./Skeletons/ProductSkeleton/ProductSkeleton";
 export * from "./Notifications/Notifications";
+export * from "./ErrorFallback/ErrorFallback";

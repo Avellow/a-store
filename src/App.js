@@ -1,5 +1,6 @@
 import Router from "./routes/router";
-import { Notifications } from "./components";
+import { ErrorFallback, Notifications } from "./components";
+import { withErrorBoundary } from "react-error-boundary";
 
 function App() {
   return (
@@ -10,4 +11,6 @@ function App() {
   );
 }
 
-export default App;
+export default withErrorBoundary(App, {
+  FallbackComponent: ErrorFallback,
+});
