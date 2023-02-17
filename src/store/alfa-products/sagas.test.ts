@@ -2,6 +2,7 @@ import { call, put } from "redux-saga/effects";
 import { productsActions } from ".";
 import { getMadeInAlfaProducts } from "../../api/astore";
 import { madeInAlfaTestProducts } from "../../tests/helpers/products";
+import { notificationsActions } from "../notifications";
 import { getProductsSaga } from "./sagas";
 
 describe("fetch products", () => {
@@ -27,6 +28,12 @@ describe("fetch products", () => {
 
     expect(g.throw({ message: errorMessage }).value).toEqual(
       put(productsActions.failure())
+    );
+
+    expect(g.next().value).toEqual(
+      put(
+        notificationsActions.error({ title: "При загрузке произошла ошибка" })
+      )
     );
 
     expect(g.next().done).toBeTruthy();

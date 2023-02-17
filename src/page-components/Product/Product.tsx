@@ -11,10 +11,14 @@ import styles from './Product.module.css';
 import { ConfigForm } from '../../components/';
 import { formDescription } from '../../vendor/constants';
 import { SelectOptions } from '../../components/ConfigForm/ConfigForm.props';
+import { notificationsActions } from '../../store/notifications';
+import { useAppDispatch } from '../../store';
 
 export const Product = (): JSX.Element => {
 
   const { id } = useParams();
+
+  const dispatch = useAppDispatch();
 
   const [product, setProduct] = useState<ProductType | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -25,7 +29,13 @@ export const Product = (): JSX.Element => {
       .then(card => {
         card && setProduct(card);
         setIsLoading(false);
-      });
+      })
+      .catch((e) => {
+        setIsLoading(false);
+        dispatch(notificationsActions.error(
+          { title: `Ошибка при загрузке товара ${e.message}` }
+        ));
+      })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -34,8 +44,8 @@ export const Product = (): JSX.Element => {
       <Page data-test-id='product-page-loading'>
         <ProductSkeleton />
       </Page>
-    )
-  }
+    );
+  };
 
   if (!product) {
     return (

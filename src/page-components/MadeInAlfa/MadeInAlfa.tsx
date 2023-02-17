@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { productsActions, productsSelector, hasErrorSelector, isLoadingSelector } from '../../store/alfa-products';
+import { productsActions, productsSelector, isLoadingSelector } from '../../store/alfa-products';
 import Page from "../Page";
 import { madeInAlfaSubtitleText, madeInAlfaTitleText } from '../../vendor/constants';
 import { CardsContainer, CardSkeletons } from '../../components/';
@@ -9,7 +9,6 @@ export const MadeInAlfa = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const products = useAppSelector(productsSelector);
   const isLoading = useAppSelector(isLoadingSelector);
-  const hasError = useAppSelector(hasErrorSelector);
 
   useEffect(() => {
     dispatch(productsActions.request());
@@ -32,5 +31,5 @@ export const MadeInAlfa = (): JSX.Element => {
         )
       }
     </Page>
-  )
-}
+  );
+};

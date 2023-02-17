@@ -7,3 +7,4 @@ export * from "./Gallery/Gallery";
 export * from "./ConfigForm/ConfigForm";
 export * from "./Skeletons/CardSkeleton/CardSkeleton";
 export * from "./Skeletons/ProductSkeleton/ProductSkeleton";
+export * from "./Notifications/Notifications";

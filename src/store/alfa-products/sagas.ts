@@ -2,6 +2,7 @@ import { getMadeInAlfaProducts } from "../../api/astore";
 import { ProductType } from "../../types/api";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { productsActions } from "./slice";
+import { notificationsActions } from "../notifications";
 
 export function* getProductsSaga() {
   try {
@@ -10,6 +11,9 @@ export function* getProductsSaga() {
     yield put(productsActions.success(products));
   } catch (error) {
     yield put(productsActions.failure());
+    yield put(
+      notificationsActions.error({ title: "При загрузке произошла ошибка" })
+    );
   }
 }
 
