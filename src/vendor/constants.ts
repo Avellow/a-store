@@ -40,3 +40,6 @@ const techPark =
 
 export const formDescription = (str: string | undefined): string | undefined =>
   str && str.replace(techPark, `\n \n ${techPark}`);
+
+export const whiteColor = "rgb(255, 255, 255)";
+export const redColor = "rgb(239, 49, 36)";

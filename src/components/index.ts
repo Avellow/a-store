@@ -9,3 +9,4 @@ export * from "./Skeletons/CardSkeleton/CardSkeleton";
 export * from "./Skeletons/ProductSkeleton/ProductSkeleton";
 export * from "./Notifications/Notifications";
 export * from "./ErrorFallback/ErrorFallback";
+export * from "./CartButton/CartButton";

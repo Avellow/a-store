@@ -1,6 +1,6 @@
 import { routerType } from "./router.types";
 import {
-  Basket,
+  Cart,
   Contacts,
   Home,
   MadeInAlfa,
@@ -44,9 +44,9 @@ export const pagesData: routerType[] = [
     linkTitle: 'Контакты'
   },
   {
-    path: 'basket',
-    element: <Basket />,
-    title: 'basket'
+    path: 'cart',
+    element: <Cart />,
+    title: 'cart'
   },
   {
     path: '*',
