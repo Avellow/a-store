@@ -10,3 +10,6 @@ export * from "./Skeletons/ProductSkeleton/ProductSkeleton";
 export * from "./Notifications/Notifications";
 export * from "./ErrorFallback/ErrorFallback";
 export * from "./CartButton/CartButton";
+export * from "./CartItem/CartItem";
+export * from "./Divider/Divider";
+export * from "./SideCart/SideCart";

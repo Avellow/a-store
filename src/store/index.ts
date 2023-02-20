@@ -2,6 +2,7 @@ import createSagaMiddleware from "@redux-saga/core";
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { productsReducer } from "./alfa-products";
+import { cartReducer } from "./cart";
 import { groupsReducer } from "./design-groups";
 import { notificationsReducer } from "./notifications";
 import { rootSaga } from "./root-saga";
@@ -13,6 +14,7 @@ export const store = configureStore({
     products: productsReducer,
     groups: groupsReducer,
     notifications: notificationsReducer,
+    cart: cartReducer,
   },
   devTools: true,
   middleware: (getDefaultMiddleware) =>
