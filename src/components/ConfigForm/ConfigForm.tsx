@@ -1,28 +1,32 @@
 import { Button } from '@alfalab/core-components/button';
 import { BaseSelectChangePayload, OptionShape, Select, Option, OptionProps } from '@alfalab/core-components/select';
-import { useEffect, useState } from 'react';
-import { ConfigFormProps, SelectOptions } from './ConfigForm.props';
+import { SyntheticEvent, useEffect, useState } from 'react';
+import { ConfigFormProps, ProductConfigOptionsType } from './ConfigForm.props';
 import styles from './ConfigForm.module.css';
-import { translateColorRu } from '../../vendor/constants';
+import { singularize } from '../../vendor/constants';
+import { translateToRu } from '../../vendor/engToRuDictionary';
 import cn from 'classnames';
+import { CartItemOptionsType } from '../../types/api';
 
-type IOptions = {
-  [P in keyof SelectOptions]: OptionShape[]
+type OptionPropsNameType = keyof ProductConfigOptionsType;
+
+type SelectOptionsType = {
+  [P in OptionPropsNameType]?: OptionShape[]
 }
 
-type SelectedOptions = {
-  [P in keyof SelectOptions]: OptionShape
-}
+export type SelectedOptionsType = {
+  [P in OptionPropsNameType]?: OptionShape
+};
 
 type ValueRendererProps = {
   selected?: OptionShape;
   selectedMultiple: OptionShape[];
 };
 
-export const ConfigForm = ({ productOptions, className }: ConfigFormProps): JSX.Element => {
+export const ConfigForm = ({ productOptions, onConfirm, className }: ConfigFormProps): JSX.Element => {
 
-  const [options, setOptions] = useState<IOptions>({});
-  const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({});
+  const [options, setOptions] = useState<SelectOptionsType>({});
+  const [selectedOptions, setSelectedOptions] = useState<SelectedOptionsType>({});
 
   useEffect(() => {
     Object
@@ -39,89 +43,77 @@ export const ConfigForm = ({ productOptions, className }: ConfigFormProps): JSX.
 
   const handleOptionChange = ({ name, selected }: BaseSelectChangePayload) => {
     if (name) {
-      setSelectedOptions(prevState => ({ ...prevState, [name]: selected }))
+      setSelectedOptions(prevState => ({ ...prevState, [name]: selected }));
     }
   }
 
-  // три функции для перевода названия цвета в Select'е
-  const RuColorOption = (props: OptionProps): JSX.Element => (
+  // три функции для перевода названий опций
+  const translateToRuOption = (props: OptionProps): JSX.Element => (
     <Option {...props}>
-      {translateColorRu(props.option.content as string)}
+      {translateToRu(props.option.content as string)}
     </Option>
   );
 
   const SelectedOption = ({ content }: OptionShape) => (
     <span>
-      {translateColorRu(content as string)}
+      {translateToRu(content as string)}
     </span>
   )
 
   const valueRenderer = ({ selected }: ValueRendererProps) =>
     selected ? <SelectedOption {...selected} /> : null
 
+  const handleSubmit = (event: SyntheticEvent) => {
+    event.preventDefault();
+
+    const formatedOptions: CartItemOptionsType = {};
+    Object.entries(selectedOptions).forEach(([prop, value]) => {
+      const singlePropForm = singularize(prop);
+      formatedOptions[singlePropForm] = value.content as string | number
+    });
+
+    onConfirm && onConfirm(formatedOptions);
+  };
+
+  const buildSelects = () => {
+    return (
+      <>
+        {
+          Object.entries(options).map(([prop, value], i) => {
+            const singleFormProp = singularize(prop);
+            const ruProp = translateToRu(singleFormProp)
+
+            return (
+              <Select
+                key={i}
+                className={styles.select}
+                onChange={handleOptionChange}
+                selected={selectedOptions[prop as OptionPropsNameType]?.key}
+                name={prop}
+                label={ruProp}
+                placeholder={`Выберете ${ruProp}`}
+                options={value}
+                Option={translateToRuOption}
+                valueRenderer={valueRenderer}
+                dataTestId={`${singleFormProp}-select`}
+              />
+            )
+          })
+        }
+      </>
+    );
+  };
+
   return (
-    <form className={cn(className, styles.configForm)} data-test-id='product-config-form'>
-      {
-        options.colors && (
-          <Select
-            className={styles.select}
-            onChange={handleOptionChange}
-            selected={selectedOptions.colors?.key}
-            name='colors'
-            label='цвет'
-            placeholder='Выберете цвет'
-            options={options.colors}
-            Option={RuColorOption}
-            valueRenderer={valueRenderer}
-            dataTestId='color-select'
-          />
-        )
-      }
-      {
-        options.sizes && (
-          <Select
-            className={styles.select}
-            label='размер'
-            onChange={handleOptionChange}
-            selected={selectedOptions.sizes?.key}
-            name='sizes'
-            placeholder='Выберете размер'
-            options={options.sizes}
-            dataTestId='size-select'
-          />
-        )
-      }
-      {
-        options.models && (
-          <Select
-            className={styles.select}
-            label='модель'
-            selected={selectedOptions.models?.key}
-            onChange={handleOptionChange}
-            name='models'
-            placeholder='Выберете модель'
-            options={options.models}
-            dataTestId='model-select'
-          />
-        )
-      }
-      {
-        options.stickerNumbers && (
-          <Select
-            className={styles.select}
-            name='stickerNumbers'
-            onChange={handleOptionChange}
-            selected={selectedOptions.stickerNumbers?.key}
-            label='стикер'
-            placeholder='Номер стикера'
-            options={options.stickerNumbers}
-            dataTestId='sticker-select'
-          />
-        )
-      }
-      <Button view='primary' data-test-id='confirm'>
+    <form
+      onSubmit={handleSubmit}
+      className={cn(className, styles.configForm)}
+      data-test-id='product-config-form'
+    >
+      {buildSelects()}
+      <Button view='primary' type='submit' data-test-id='confirm'>
         В корзину
       </Button>
     </form>
-  )
-}
+  );
+};

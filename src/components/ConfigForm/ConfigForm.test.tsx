@@ -2,11 +2,11 @@ import { render, screen, configure } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { ConfigForm } from './ConfigForm';
-import { ConfigFormProps, SelectOptions } from './ConfigForm.props';
+import { ConfigFormProps, ProductConfigOptionsType } from './ConfigForm.props';
 
 configure({ testIdAttribute: 'data-test-id' });
 
-const selectableOptions: SelectOptions = {
+const selectableOptions: ProductConfigOptionsType = {
   'colors': ['white', 'black'],
   'sizes': ['M', 'S', 'XXL'],
   'models': undefined,

@@ -20,21 +20,6 @@ export const makeLineBreaks = (string: string) => {
 
 // опции для формы товара
 // TODO: разнести по файлам именованные разделы, чтобы файл не разрастался
-interface IColorsLib {
-  [index: string]: string;
-}
-
-export const engToRusColorsLib: IColorsLib = {
-  white: "белый",
-  black: "черный",
-  green: "зеленый",
-  red: "красный",
-  gray: "серый",
-};
-
-export const translateColorRu = (color: string): string =>
-  engToRusColorsLib[color] || color;
-
 const techPark =
   "Посмотреть и потрогать все стикеры можно в A-Store на Технопарке. А ещё там можно добавить сразу несколько стикеров на одну вещь.";
 
@@ -43,3 +28,20 @@ export const formDescription = (str: string | undefined): string | undefined =>
 
 export const whiteColor = "rgb(255, 255, 255)";
 export const redColor = "rgb(239, 49, 36)";
+
+// преобразует слово из множественного числа в единственное
+export function singularize(word: string): string {
+  const endings: { [index: string]: string } = {
+    ves: "fe",
+    ies: "y",
+    i: "us",
+    zes: "ze",
+    ses: "s",
+    es: "e",
+    s: "",
+  };
+  return word.replace(
+    new RegExp(`(${Object.keys(endings).join("|")})$`),
+    (r) => endings[r]
+  );
+}
