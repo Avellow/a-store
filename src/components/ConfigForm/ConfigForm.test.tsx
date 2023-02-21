@@ -29,7 +29,7 @@ describe('Config Form', () => {
 
     expect(screen.getByTestId('color-select')).toBeInTheDocument();
     expect(screen.getByTestId('size-select')).toBeInTheDocument();
-    expect(screen.getByTestId('sticker-select')).toBeInTheDocument();
+    expect(screen.getByTestId('stickerNumber-select')).toBeInTheDocument();
 
     expect(screen.queryByTestId('model-select')).not.toBeInTheDocument();
   });
