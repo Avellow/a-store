@@ -4,7 +4,7 @@ import {
   Home,
   MadeInAlfa,
   NotFound,
-  YourDesign,
+  YourDesignPage,
   Product
 } from "../page-components";
 
@@ -27,7 +27,7 @@ export const pagesData: routerType[] = [
   },
   {
     path: 'your-design',
-    element: <YourDesign />,
+    element: <YourDesignPage />,
     title: 'yourDesign',
     linkTitle: 'Свой дизайн',
   },

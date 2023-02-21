@@ -45,7 +45,7 @@ const Page = ({
               font='styrene'
               color='primary'
               className={styles.pageTitle}
-              dataTestId='page-title'
+              data-testid='page-title'
             >
               {title}
             </Typography.Title>
@@ -59,6 +59,7 @@ const Page = ({
               view='xsmall'
               color='primary'
               className={styles.pageSubtitle}
+              data-testid='page-subtitle'
             >
               {subtitle}
             </Typography.Title>
