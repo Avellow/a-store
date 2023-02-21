@@ -1,4 +1,4 @@
-export const madeInAlfaTestProducts = [
+export const testingProducts = [
   {
     id: 0,
     preview: "https://98058636.jpg",

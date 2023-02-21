@@ -1,7 +1,7 @@
 import { call, put } from "redux-saga/effects";
 import { productsActions } from ".";
 import { getMadeInAlfaProducts } from "../../api/astore";
-import { madeInAlfaTestProducts } from "../../tests/helpers/products";
+import { testingProducts } from "../../tests/helpers/products";
 import { notificationsActions } from "../notifications";
 import { getProductsSaga } from "./sagas";
 
@@ -12,8 +12,8 @@ describe("fetch products", () => {
     // сравнение инструкций
     expect(g.next().value).toEqual(call(getMadeInAlfaProducts));
 
-    expect(g.next(madeInAlfaTestProducts).value).toEqual(
-      put(productsActions.success(madeInAlfaTestProducts))
+    expect(g.next(testingProducts).value).toEqual(
+      put(productsActions.success(testingProducts))
     );
 
     expect(g.next().done).toBeTruthy();

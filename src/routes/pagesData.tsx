@@ -2,7 +2,7 @@ import { routerType } from "./router.types";
 import {
   Contacts,
   Home,
-  MadeInAlfa,
+  MadeInAlfaPage,
   NotFound,
   YourDesignPage,
   Product
@@ -16,7 +16,7 @@ export const pagesData: routerType[] = [
   },
   {
     path: 'made-in-alfa',
-    element: <MadeInAlfa />,
+    element: <MadeInAlfaPage />,
     title: 'madeInAlfa',
     linkTitle: 'Сделано в Альфе'
   },
