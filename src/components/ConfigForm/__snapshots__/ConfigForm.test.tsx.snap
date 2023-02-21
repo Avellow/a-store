@@ -160,7 +160,9 @@ Object {
                       <div
                         class="select__value_5l6nj"
                       >
-                        M
+                        <span>
+                          M
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -195,7 +197,7 @@ Object {
           aria-haspopup="listbox"
           aria-owns="downshift-5-menu"
           class="select__component_1frn5 select"
-          data-test-id="sticker-select"
+          data-test-id="stickerNumber-select"
           role="combobox"
           tabindex="-1"
         >
@@ -209,7 +211,7 @@ Object {
                 aria-controls="downshift-5-menu"
                 aria-labelledby="downshift-5-label"
                 class="select__field_5l6nj form-control__inner_3j482 form-control__inner_tvifb form-control__filled_3j482 form-control__filled_tvifb form-control__hasInnerLabel_3j482"
-                data-test-id="sticker-select-field"
+                data-test-id="stickerNumber-select-field"
                 id="downshift-4-input"
                 tabindex="0"
               >
@@ -224,7 +226,7 @@ Object {
                       for="downshift-4-input"
                       id="downshift-5-label"
                     >
-                      стикер
+                      номер стикера
                     </span>
                   </span>
                   <div
@@ -237,7 +239,7 @@ Object {
                         for="downshift-4-input"
                         id="downshift-5-label"
                       >
-                        стикер
+                        номер стикера
                       </span>
                     </span>
                   </div>
@@ -250,7 +252,9 @@ Object {
                       <div
                         class="select__value_5l6nj"
                       >
-                        1
+                        <span>
+                          1
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -284,7 +288,7 @@ Object {
         <button
           class="button__component_onnkc button__m_onnkc button__component_1qjkj button__primary_1qjkj"
           data-test-id="confirm"
-          type="button"
+          type="submit"
         >
           <span
             class="button__text_onnkc button__stretchText_onnkc"
@@ -454,7 +458,9 @@ Object {
                     <div
                       class="select__value_5l6nj"
                     >
-                      M
+                      <span>
+                        M
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -489,7 +495,7 @@ Object {
         aria-haspopup="listbox"
         aria-owns="downshift-5-menu"
         class="select__component_1frn5 select"
-        data-test-id="sticker-select"
+        data-test-id="stickerNumber-select"
         role="combobox"
         tabindex="-1"
       >
@@ -503,7 +509,7 @@ Object {
               aria-controls="downshift-5-menu"
               aria-labelledby="downshift-5-label"
               class="select__field_5l6nj form-control__inner_3j482 form-control__inner_tvifb form-control__filled_3j482 form-control__filled_tvifb form-control__hasInnerLabel_3j482"
-              data-test-id="sticker-select-field"
+              data-test-id="stickerNumber-select-field"
               id="downshift-4-input"
               tabindex="0"
             >
@@ -518,7 +524,7 @@ Object {
                     for="downshift-4-input"
                     id="downshift-5-label"
                   >
-                    стикер
+                    номер стикера
                   </span>
                 </span>
                 <div
@@ -531,7 +537,7 @@ Object {
                       for="downshift-4-input"
                       id="downshift-5-label"
                     >
-                      стикер
+                      номер стикера
                     </span>
                   </span>
                 </div>
@@ -544,7 +550,9 @@ Object {
                     <div
                       class="select__value_5l6nj"
                     >
-                      1
+                      <span>
+                        1
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -578,7 +586,7 @@ Object {
       <button
         class="button__component_onnkc button__m_onnkc button__component_1qjkj button__primary_1qjkj"
         data-test-id="confirm"
-        type="button"
+        type="submit"
       >
         <span
           class="button__text_onnkc button__stretchText_onnkc"
