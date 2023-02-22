@@ -10,9 +10,12 @@ import { DeleteMBlackIcon } from '@alfalab/icons-classic/DeleteMBlackIcon';
 import styles from './CartItem.module.css';
 import { CartItemProps } from './CartItem.props';
 import { translateToRu } from '../../vendor/engToRuDictionary';
+import { useAppDispatch } from '../../store';
+import { cartActions } from '../../store/cart';
 
-export const CartItem = ({ item, onDecrease, onIncrease, onRemove }: CartItemProps): JSX.Element => {
+export const CartItem = ({ item }: CartItemProps): JSX.Element => {
 
+  const dispatch = useAppDispatch();
   const { options, imageURL, title, quantity, price } = item;
 
   const optionsEntries = useMemo(() => {
@@ -22,15 +25,19 @@ export const CartItem = ({ item, onDecrease, onIncrease, onRemove }: CartItemPro
   }, [options]);
 
   const handleDecrease = () => {
-    onDecrease(item);
+    if (item.quantity === 1) {
+      dispatch(cartActions.removeItem(item));
+    } else {
+      dispatch(cartActions.decreaseQuantity(item));
+    }
   };
 
   const handleIncrease = () => {
-    onIncrease(item);
+    dispatch(cartActions.addItem(item));
   };
 
   const handleRemove = () => {
-    onRemove(item);
+    dispatch(cartActions.removeItem(item))
   };
 
   return (
@@ -38,6 +45,7 @@ export const CartItem = ({ item, onDecrease, onIncrease, onRemove }: CartItemPro
       <SuperEllipse
         size={80}
         imageUrl={imageURL}
+        dataTestId='img'
       />
       <div className={styles.info}>
         <div className={styles.details}>
@@ -48,6 +56,7 @@ export const CartItem = ({ item, onDecrease, onIncrease, onRemove }: CartItemPro
             color='primary'
             tag='h4'
             className={styles.title}
+            dataTestId='title'
           >
             {title}
           </Typography.TitleResponsive>
@@ -55,7 +64,12 @@ export const CartItem = ({ item, onDecrease, onIncrease, onRemove }: CartItemPro
           <ul className={styles.options}>
             {optionsEntries && optionsEntries.map(([name, value]) => (
               <li key={name}>
-                <Typography.Text view='primary-small' weight='bold' className={styles.option}>
+                <Typography.Text
+                  view='primary-small'
+                  weight='bold'
+                  className={styles.option}
+                  dataTestId={`${name}-option`}
+                >
                   {translateToRu(name)}: {translateToRu(`${value}`)}
                 </Typography.Text>
               </li>
@@ -63,26 +77,34 @@ export const CartItem = ({ item, onDecrease, onIncrease, onRemove }: CartItemPro
           </ul>
 
         </div>
-        <div className={styles.quantity}>
+        <div className={styles.quantityControl}>
           <div className={styles.control}>
             <IconButton
               icon={MinusMIcon}
               size='xs'
               className={styles.controlIcon}
               onClick={handleDecrease}
+              dataTestId='decrease-quantity'
             />
-            <span>{quantity}</span>
+            <span data-test-id='quantity'>{quantity}</span>
             <IconButton
               icon={AddMIcon}
               size='xs'
               className={styles.controlIcon}
               onClick={handleIncrease}
+              dataTestId='increase-quantity'
             />
           </div>
-          <Amount value={quantity * price} minority={0} currency='RUB' className={styles.price} />
+          <Amount
+            value={quantity * price}
+            minority={0}
+            currency='RUB'
+            className={styles.price}
+            dataTestId='total-price'
+          />
         </div>
       </div>
-      <IconButton icon={DeleteMBlackIcon} colors='inverted' onClick={handleRemove} />
+      <IconButton icon={DeleteMBlackIcon} colors='inverted' onClick={handleRemove} dataTestId='remove-item' />
     </div>
   );
 };

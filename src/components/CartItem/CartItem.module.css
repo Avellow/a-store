@@ -54,7 +54,7 @@
   margin: 0;
 }
 
-.quantity {
+.quantityControl {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,7 +81,7 @@
     align-items: baseline;
   }
 
-  .quantity {
+  .quantityControl {
     flex-wrap: wrap;
     gap: 3px;
     min-width: 0;
