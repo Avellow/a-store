@@ -13,6 +13,7 @@ export const CartButton = ({ goodsQuantity, ...restProps }: CartButtonProps): JS
       size={80}
       backgroundColor={redColor}
       bottomAddons={<Badge view='count' content={goodsQuantity} />}
+      dataTestId='cart-size'
     >
       <ShoppingBagMIcon fill={redColor} stroke={whiteColor} />
     </Circle>

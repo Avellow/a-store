@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart button component view should be rendered 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button button icon-button__primary_7jncp icon-button__component_7jncp"
+        type="button"
+      >
+        <span
+          class="button__text_onnkc button__stretchText_onnkc"
+        >
+          <span
+            class="icon-button__iconWrapper_gy47p icon-button__s_gy47p"
+          >
+            <div
+              class="icon-view__componentWrapper_1wtym icon-view__size_80_1wtym"
+              data-test-id="cart-size"
+            >
+              <div
+                class="icon-view__component_1wtym"
+              >
+                <svg
+                  focusable="false"
+                  height="80"
+                  viewBox="0 0 80 80"
+                  width="80"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="icon-view__bg_1wtym"
+                    d="M71 56C74.0263 56 77.2805 54.8407 78.1837 51.9523C79.364 48.178 80 44.1633 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C44.1633 80 48.178 79.364 51.9523 78.1837C54.8407 77.2805 56 74.0263 56 71C56 62.7157 62.7157 56 71 56Z"
+                    style="fill: rgb(239, 49, 36);"
+                  />
+                </svg>
+                <div
+                  class="icon-view__children_1wtym"
+                >
+                  <svg
+                    fill="rgb(239, 49, 36)"
+                    focusable="false"
+                    height="24"
+                    role="img"
+                    stroke="rgb(255, 255, 255)"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M16 5v1h4l1 16H3L4 6h4V5a4 4 0 118 0zm-4-2a2 2 0 012 2v1h-4V5a2 2 0 012-2zm-2 6a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="icon-view__addons_1wtym icon-view__bottomAddons_1wtym"
+              >
+                <div
+                  class="badge__count_1vi3d"
+                >
+                  <div
+                    class="badge__component_1vi3d badge__m_1vi3d badge__count_1vi3d badge__heightS_1vi3d"
+                    style="height: 16px; min-width: 16px;"
+                  >
+                    11
+                  </div>
+                </div>
+              </div>
+            </div>
+          </span>
+        </span>
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button button icon-button__primary_7jncp icon-button__component_7jncp"
+      type="button"
+    >
+      <span
+        class="button__text_onnkc button__stretchText_onnkc"
+      >
+        <span
+          class="icon-button__iconWrapper_gy47p icon-button__s_gy47p"
+        >
+          <div
+            class="icon-view__componentWrapper_1wtym icon-view__size_80_1wtym"
+            data-test-id="cart-size"
+          >
+            <div
+              class="icon-view__component_1wtym"
+            >
+              <svg
+                focusable="false"
+                height="80"
+                viewBox="0 0 80 80"
+                width="80"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="icon-view__bg_1wtym"
+                  d="M71 56C74.0263 56 77.2805 54.8407 78.1837 51.9523C79.364 48.178 80 44.1633 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80C44.1633 80 48.178 79.364 51.9523 78.1837C54.8407 77.2805 56 74.0263 56 71C56 62.7157 62.7157 56 71 56Z"
+                  style="fill: rgb(239, 49, 36);"
+                />
+              </svg>
+              <div
+                class="icon-view__children_1wtym"
+              >
+                <svg
+                  fill="rgb(239, 49, 36)"
+                  focusable="false"
+                  height="24"
+                  role="img"
+                  stroke="rgb(255, 255, 255)"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M16 5v1h4l1 16H3L4 6h4V5a4 4 0 118 0zm-4-2a2 2 0 012 2v1h-4V5a2 2 0 012-2zm-2 6a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="icon-view__addons_1wtym icon-view__bottomAddons_1wtym"
+            >
+              <div
+                class="badge__count_1vi3d"
+              >
+                <div
+                  class="badge__component_1vi3d badge__m_1vi3d badge__count_1vi3d badge__heightS_1vi3d"
+                  style="height: 16px; min-width: 16px;"
+                >
+                  11
+                </div>
+              </div>
+            </div>
+          </div>
+        </span>
+      </span>
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
