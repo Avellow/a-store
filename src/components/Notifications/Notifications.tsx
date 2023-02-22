@@ -1,8 +1,8 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { notificationsActions, notificationsSelector } from '../../store/notifications';
+import { AddNotificationProps, notificationsActions, notificationsSelector } from '../../store/notifications';
 
-import { Notification, NotificationProps } from '@alfalab/core-components/notification';
+import { Notification } from '@alfalab/core-components/notification';
 import { NotificationManager } from '@alfalab/core-components/notification-manager';
 import { Spinner } from '@alfalab/core-components/spinner';
 
@@ -14,9 +14,9 @@ export const Notifications = memo(() => {
     dispatch(notificationsActions.remove(id));
   }, [dispatch]);
 
-  const notificationsList = useMemo(() => notifications.map((notification: NotificationProps) => {
+  const notificationsList = useMemo(() => notifications.map((notification: AddNotificationProps) => {
     const {
-      id, title, badge, autoCloseDelay, children,
+      id, title, badge, autoCloseDelay, subtitle,
     } = notification || {};
 
     return (
@@ -28,7 +28,7 @@ export const Notifications = memo(() => {
         autoCloseDelay={autoCloseDelay}
         leftAddons={badge ? null : <Spinner visible={true} size='s' colors='inverted' />}
       >
-        {children}
+        {subtitle}
       </Notification>
     );
   }), [notifications]);

@@ -3,7 +3,7 @@ import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { NotificationProps } from "@alfalab/core-components/notification";
 
 export type NotificationsStateType = {
-  notifications: NotificationProps[];
+  notifications: AddNotificationProps[];
 };
 
 const initialState: NotificationsStateType = {
@@ -12,19 +12,22 @@ const initialState: NotificationsStateType = {
 
 const NAME = "notifications";
 
-type AddNotificationProps = NotificationProps & { id?: string };
+export type AddNotificationProps = NotificationProps & {
+  id?: string;
+  subtitle?: string;
+};
 
 const success: CaseReducer<
   NotificationsStateType,
   PayloadAction<AddNotificationProps>
 > = (
   state,
-  { payload: { title, children = "", id, autoCloseDelay = 5000 } }
+  { payload: { title, subtitle = "", id, autoCloseDelay = 5000 } }
 ) => {
   state.notifications.push({
     badge: "positive",
     title,
-    children,
+    subtitle,
     autoCloseDelay,
     id: id || `${Math.random()}`,
   });
@@ -35,12 +38,12 @@ const error: CaseReducer<
   PayloadAction<AddNotificationProps>
 > = (
   state,
-  { payload: { title, children = "", id, autoCloseDelay = 5000 } }
+  { payload: { title, subtitle = "", id, autoCloseDelay = 5000 } }
 ) => {
   state.notifications.push({
     badge: "negative",
     title,
-    children,
+    subtitle,
     autoCloseDelay,
     id: id || `${Math.random()}`,
   });
@@ -51,11 +54,11 @@ const neutral: CaseReducer<
   PayloadAction<AddNotificationProps>
 > = (
   state,
-  { payload: { title, children = "", autoCloseDelay = 5000, id } }
+  { payload: { title, subtitle = "", autoCloseDelay = 5000, id } }
 ) => {
   state.notifications.push({
     title,
-    children,
+    subtitle,
     autoCloseDelay,
     id: id || `${Math.random()}`,
   });
