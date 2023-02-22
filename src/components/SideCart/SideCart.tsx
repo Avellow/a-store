@@ -37,15 +37,23 @@ export const SideCart = ({ className, ...props }: SideCartProps): JSX.Element =>
       </SidePanelResponsive.Header>
       <SidePanelResponsive.Content>
         <Divider />
-        <ul className={styles.items}>
+        <ul className={styles.items} data-test-id='cart-items-list'>
           {items.map(item => (
-            <li key={v1()}>
+            <li key={v1()} data-test-id='cart-item'>
               <CartItem item={item} />
             </li>
           ))}
         </ul>
         <Divider />
-        <Typography.Title tag='div' font='styrene' weight='bold' view='small' className={styles.total} color='primary'>
+        <Typography.Title
+          tag='div'
+          font='styrene'
+          weight='bold'
+          view='small'
+          className={styles.total}
+          color='primary'
+          data-test-id='total-cart-price'
+        >
           Total: <Amount value={totalCartPrice} currency='RUB' minority={0} />
         </Typography.Title>
         <Button block className={styles.button}>Дальше</Button>
