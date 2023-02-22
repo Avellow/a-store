@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import Router from "react-router-dom";
 
 import { renderWithRouterAndProvider } from '../../tests/helpers/renderWithRouterAndProvider';
-import * as Api from '../../api/cards';
+import * as Api from '../../api/astore';
 import { ProductType } from '../../types/api';
 
 configure({ testIdAttribute: 'data-test-id' });
@@ -72,7 +72,8 @@ describe('Product page', () => {
   it('should show `not found page` if product not found', async () => {
     mockedGetProduct.mockReturnValue(Promise.resolve(undefined));
     renderPage();
-    const notFoundPage = await screen.findByTestId('product-not-found');
+
+    const notFoundPage = await screen.findByTestId('not-found-page');
     expect(notFoundPage).toBeInTheDocument();
   })
 })

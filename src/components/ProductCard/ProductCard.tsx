@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 export const ProductCard = ({
   title,
   id,
-  availability,
   preview,
+  subtitle,
   price
 }: ProductProps): JSX.Element => {
 
@@ -21,7 +21,6 @@ export const ProductCard = ({
           alt={title}
         />
       </div>
-
       <Typography.TitleResponsive
         view='xsmall'
         tag='h3'
@@ -30,7 +29,13 @@ export const ProductCard = ({
       >
         {title}
       </Typography.TitleResponsive>
-
+      {
+        subtitle && (
+          <Typography.Text tag='p' className={styles.subtitle}>
+            {subtitle}
+          </Typography.Text>
+        )
+      }
       <Typography.Text view='primary-large' tag='p'>
         <Amount
           value={price}

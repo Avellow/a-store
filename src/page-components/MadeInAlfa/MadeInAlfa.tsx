@@ -1,42 +1,35 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { cardsActions, cardsSelector, hasErrorSelector, isLoadingSelector } from '../../store/cards';
+import { productsActions, productsSelector, isLoadingSelector } from '../../store/alfa-products';
 import Page from "../Page";
-import styles from './MadeInAlfa.module.css';
-import { Typography } from "@alfalab/core-components/typography";
 import { madeInAlfaSubtitleText, madeInAlfaTitleText } from '../../vendor/constants';
-import { CardsContainer } from '../../components/';
+import { CardsContainer, CardSkeletons } from '../../components/';
 
 export const MadeInAlfa = (): JSX.Element => {
-    const dispatch = useAppDispatch();
-    const cards = useAppSelector(cardsSelector);
-    const isLoading = useAppSelector(isLoadingSelector);
-    const hasError = useAppSelector(hasErrorSelector);
+  const dispatch = useAppDispatch();
+  const products = useAppSelector(productsSelector);
+  const isLoading = useAppSelector(isLoadingSelector);
 
-    useEffect(() => {
-        dispatch(cardsActions.request());
-    }, []);
+  useEffect(() => {
+    dispatch(productsActions.request());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    return (
-        <Page
-            data-testid='made-in-alfa-page'
-            title={madeInAlfaTitleText}
-            subtitle={madeInAlfaSubtitleText}
-        >
-            {
-                (cards && cards.length) ? (
-                    <CardsContainer cards={cards} />
-                ) : (
-                    <Typography.Title
-                        tag='div'
-                        view='xsmall'
-                        color='primary'
-                        className={styles.pageSubtitle}
-                    >
-                        Товар не найден
-                    </Typography.Title>
-                )
-            }
-        </Page>
-    )
-}
+  return (
+    <Page
+      data-testid='made-in-alfa-page'
+      title={madeInAlfaTitleText}
+      subtitle={madeInAlfaSubtitleText}
+    >
+      {isLoading && !products.length && (<CardSkeletons />)}
+
+      {products && <CardsContainer cards={products} />}
+
+      {
+        !isLoading && !products.length && (
+          <span>Товар не найден</span>
+        )
+      }
+    </Page>
+  );
+};

@@ -1,8 +1,8 @@
 import { fork } from "redux-saga/effects";
-import { watchCardsSaga } from "./cards";
-import { watchGroupsSaga } from "./products-groups";
+import { watchProductsSaga } from "./alfa-products";
+import { watchGroupsSaga } from "./design-groups";
 
 export function* rootSaga() {
-  yield fork(watchCardsSaga);
+  yield fork(watchProductsSaga);
   yield fork(watchGroupsSaga);
 }

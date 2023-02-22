@@ -2,38 +2,54 @@ import { Amount } from '@alfalab/core-components/amount';
 import { Typography } from '@alfalab/core-components/typography';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
-import { getProduct, getCustomProduct } from '../../api/cards';
-import { Gallery } from '../../components';
+import { getProduct } from '../../api/astore';
+import { Gallery, ProductSkeleton } from '../../components';
 import { ProductType } from '../../types/api';
 import { NotFound } from '../NotFound/NotFound';
-import Page from '../Page'
-import { ProductProps } from './Product.props';
+import Page from '../Page';
 import styles from './Product.module.css';
 import { ConfigForm } from '../../components/';
 import { formDescription } from '../../vendor/constants';
 import { SelectOptions } from '../../components/ConfigForm/ConfigForm.props';
+import { notificationsActions } from '../../store/notifications';
+import { useAppDispatch } from '../../store';
 
-export const Product = ({ type = 'alfa' }: ProductProps): JSX.Element => {
+export const Product = (): JSX.Element => {
 
   const { id } = useParams();
 
+  const dispatch = useAppDispatch();
+
   const [product, setProduct] = useState<ProductType | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    // ВРЕМЕННОЕ РЕШЕНИЕ ДЛЯ ЗАГЛУШЕК
-    if (type === 'alfa') {
-      getProduct(Number(id)).then(card => card && setProduct(card));
-    } else {
-      getCustomProduct(Number(id)).then(card => card && setProduct(card));
-    }
+    setIsLoading(true);
+    getProduct(Number(id))
+      .then(card => {
+        card && setProduct(card);
+        setIsLoading(false);
+      })
+      .catch((e) => {
+        setIsLoading(false);
+        dispatch(notificationsActions.error(
+          { title: `Ошибка при загрузке товара ${e.message}` }
+        ));
+      })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  if (isLoading) {
+    return (
+      <Page data-test-id='product-page-loading'>
+        <ProductSkeleton />
+      </Page>
+    );
+  };
+
   if (!product) {
     return (
-      <Page data-test-id='product-not-found'>
-        <NotFound />
-      </Page>
+      <NotFound />
     );
   };
 
@@ -42,7 +58,7 @@ export const Product = ({ type = 'alfa' }: ProductProps): JSX.Element => {
     colors: product.colors,
     models: product.models,
     stickerNumbers: product.stickerNumbers
-  }
+  };
 
   return (
     <Page className={styles.container} data-test-id='product-page'>

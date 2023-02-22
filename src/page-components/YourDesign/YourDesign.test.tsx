@@ -2,7 +2,7 @@ import { renderWithRouterAndProvider } from '../../tests/helpers/renderWithRoute
 import { screen } from '@testing-library/react';
 import { testingGroups } from '../../tests/helpers/groups';
 import * as reduxHooks from '../../store';
-import { groupsActions } from '../../store/products-groups/slice';
+import { groupsActions } from '../../store/design-groups/slice';
 import '@testing-library/jest-dom/extend-expect';
 
 const pagePath = '/your-design';
@@ -14,40 +14,47 @@ const mockedUseDispatch = jest.spyOn(reduxHooks, 'useAppDispatch');
 
 describe('Your Design component', () => {
 
-    it('should render product groups', () => {
-        mockedUseDispatch.mockReturnValue(jest.fn());
-        render();
-    });
+  beforeEach(() => {
+    mockedUseSelector.mockReturnValue([]);
+  });
 
-    it('should render 2 testing groups', () => {
-        mockedUseSelector.mockReturnValue(testingGroups);
-        mockedUseDispatch.mockReturnValue(jest.fn());
-        render();
-        expect(screen.getAllByTestId('your-design-group')).toHaveLength(2);
-    });
+  it('should render product groups', () => {
+    mockedUseDispatch.mockReturnValue(jest.fn());
+    render();
+  });
 
-    it('should have title', () => {
-        mockedUseDispatch.mockReturnValue(jest.fn());
-        render();
-        expect(screen.getByText('Свой дизайн')).toBeInTheDocument();
-    });
+  it('should render 2 testing groups', () => {
+    mockedUseSelector.mockReturnValue(testingGroups);
+    mockedUseDispatch.mockReturnValue(jest.fn());
+    render();
+    expect(screen.getAllByTestId('your-design-group')).toHaveLength(2);
+  });
 
-    it('should dispatch action', () => {
-        const dispatch = jest.fn();
-        mockedUseDispatch.mockReturnValue(dispatch);
-        const mockedGroupsRequest = jest.spyOn(groupsActions, 'request');
+  it('should have title', () => {
+    mockedUseDispatch.mockReturnValue(jest.fn());
+    render();
+    expect(screen.getByText('Свой дизайн')).toBeInTheDocument();
+  });
 
-        render();
+  it('should dispatch action', () => {
+    const dispatch = jest.fn();
+    mockedUseDispatch.mockReturnValue(dispatch);
+    const mockedGroupsRequest = jest.spyOn(groupsActions, 'request');
 
-        expect(dispatch).toHaveBeenCalled();
-        expect(mockedGroupsRequest).toHaveBeenCalled();
-    });
+    render();
 
-    it('should show message if there are no products', () => {
-        mockedUseSelector.mockReturnValue([]);
-        mockedUseDispatch.mockReturnValue(jest.fn());
-        render();
-        expect(screen.queryByTestId('your-design-group')).toBeNull();
-        expect(screen.getByText('Товар не найден')).toBeInTheDocument();
-    });
+    expect(dispatch).toHaveBeenCalled();
+    expect(mockedGroupsRequest).toHaveBeenCalled();
+  });
+
+  it('should show message if there are no products', async () => {
+    mockedUseSelector.mockReturnValue([]);
+    mockedUseSelector.mockReturnValue(false);
+    mockedUseDispatch.mockReturnValue(jest.fn());
+    render();
+
+    expect(screen.queryByTestId('your-design-group')).toBeNull();
+    const text = await screen.findByText('Группы с товарами не найдены')
+    expect(text).toBeInTheDocument();
+  });
 });

@@ -23,7 +23,7 @@ export const pagesData: routerType[] = [
   },
   {
     path: 'made-in-alfa/:id',
-    element: <Product type='alfa' />,
+    element: <Product />,
     title: 'madeInAlfaProduct',
   },
   {
@@ -34,7 +34,7 @@ export const pagesData: routerType[] = [
   },
   {
     path: 'your-design/:id',
-    element: <Product type='customer' />,
+    element: <Product />,
     title: 'yourDesignProduct',
   },
   {

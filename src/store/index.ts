@@ -1,17 +1,18 @@
 import createSagaMiddleware from "@redux-saga/core";
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { cardsReducer } from "./cards";
-import { groupsReducer } from "./products-groups";
+import { productsReducer } from "./alfa-products";
+import { groupsReducer } from "./design-groups";
+import { notificationsReducer } from "./notifications";
 import { rootSaga } from "./root-saga";
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
-  // TODO: отрефакторить названия
   reducer: {
-    cards: cardsReducer,
+    products: productsReducer,
     groups: groupsReducer,
+    notifications: notificationsReducer,
   },
   devTools: true,
   middleware: (getDefaultMiddleware) =>
