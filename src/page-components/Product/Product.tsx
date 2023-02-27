@@ -104,6 +104,8 @@ export const Product = (): JSX.Element => {
             value={product.price}
             minority={0}
             currency='RUB'
+            bold='full'
+            className={styles.price}
           />
         </Typography.Title>
         <ConfigForm

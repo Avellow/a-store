@@ -286,7 +286,7 @@ Object {
           />
         </div>
         <button
-          class="button__component_onnkc button__m_onnkc button__component_1qjkj button__primary_1qjkj"
+          class="button__component_onnkc button__m_onnkc button__component_1qjkj button__primary_1qjkj submit"
           data-test-id="confirm"
           type="submit"
         >
@@ -584,7 +584,7 @@ Object {
         />
       </div>
       <button
-        class="button__component_onnkc button__m_onnkc button__component_1qjkj button__primary_1qjkj"
+        class="button__component_onnkc button__m_onnkc button__component_1qjkj button__primary_1qjkj submit"
         data-test-id="confirm"
         type="submit"
       >

@@ -7,7 +7,7 @@ const EngToRu: Record<string, string> = {
   stickerNumber: "номер стикера",
   size: "размер",
   color: "цвет",
-  model: "model",
+  model: "модель",
 };
 
 export const translateToRu = (word: string): string =>

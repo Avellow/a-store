@@ -111,7 +111,7 @@ export const ConfigForm = ({ productOptions, onConfirm, className }: ConfigFormP
       data-test-id='product-config-form'
     >
       {buildSelects()}
-      <Button view='primary' type='submit' data-test-id='confirm'>
+      <Button view='primary' type='submit' className={styles.submit} data-test-id='confirm'>
         В корзину
       </Button>
     </form>

@@ -34,4 +34,5 @@
   background-color: #000;
   color: #fff;
   margin: 40px auto 0;
+  font-family: var(--my-font-family);
 }

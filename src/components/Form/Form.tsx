@@ -42,6 +42,7 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
     register,
     handleSubmit,
     control,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { isDirty, errors },
     getFieldState
   } = useForm<InputsField>({
