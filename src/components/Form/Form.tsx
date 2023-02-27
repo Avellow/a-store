@@ -61,7 +61,7 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
   }
 
   return (
-    <form className={cn(className, styles.form)} onSubmit={handleSubmit(onSubmit)}>
+    <form className={cn(className, styles.form)} onSubmit={handleSubmit(onSubmit)} data-test-id='form'>
 
       <Input
         {...makeInputProps('ФИО', 'Фамилия Имя Отчество')}
@@ -69,6 +69,8 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
         error={errors.name?.type === 'maxLength' && symbolLengthError('max', 100)}
         success={isFieldCorrect('name')}
+
+        dataTestId='name-input'
       />
 
       <Input
@@ -80,6 +82,8 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
         error={errors.email?.type === 'pattern' && emailError}
         success={isFieldCorrect('email')}
+
+        dataTestId='email-input'
       />
 
       <PhoneInput
@@ -88,6 +92,8 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
         error={errors.phoneNumber?.type === 'minLength' && phoneNumberError}
         success={isFieldCorrect('phoneNumber')}
+
+        dataTestId='phone-input'
       />
 
       <Input
@@ -95,6 +101,8 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
         {...register('address')}
 
         success={isFieldCorrect('address')}
+
+        dataTestId='address-input'
       />
 
       <Controller
@@ -116,10 +124,17 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
               value={value}
               error={error?.message}
               className={styles.radioGroup}
+
+              dataTestId='delivery-radio'
             >
               {
                 deliveryTypes.map(({ label, radioName }) => (
-                  <Radio key={radioName} label={label} value={radioName} />
+                  <Radio
+                    key={radioName}
+                    label={label}
+                    value={radioName}
+                    dataTestId={`radio-${radioName}`}
+                  />
                 ))
               }
             </RadioGroup>
@@ -130,6 +145,8 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
       <Input
         {...makeInputProps('Промокод')}
         {...register('promo')}
+
+        dataTestId='promo-input'
       />
 
       <Checkbox
@@ -137,6 +154,8 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
         checked={isPrivacyChecked}
         onChange={handleChangePrivacyChecked}
         className={styles.privacy}
+
+        dataTestId='privacy-check'
       />
 
       <Textarea
@@ -146,6 +165,8 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
         block
         resize={'vertical'}
         {...register('comment')}
+
+        dataTestId='comment-input'
       />
 
       <Typography.Text view='primary-small' className={styles.paymentHint}>
@@ -164,10 +185,22 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
             }
           };
           return (
-            <RadioGroup label='Способ оплаты' onChange={handleChange} value={value} error={error?.message}>
+            <RadioGroup
+              label='Способ оплаты'
+              onChange={handleChange}
+              value={value}
+              error={error?.message}
+
+              dataTestId='payment-radio'
+            >
               {
                 paymentMethods.map(({ label, radioName }) => (
-                  <Radio key={radioName} label={label} value={radioName} />
+                  <Radio
+                    key={radioName}
+                    label={label}
+                    value={radioName}
+                    dataTestId={`radio-${radioName}`}
+                  />
                 ))
               }
             </RadioGroup>
@@ -180,6 +213,8 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
         block
         className={styles.button}
         disabled={!isPrivacyChecked}
+
+        dataTestId='submit'
       >Дальше</Button>
     </form>
   );

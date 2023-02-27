@@ -28,9 +28,9 @@ export const Order = (): JSX.Element => {
   return (
     <div className={styles.order}>
 
-      <Form className={styles.form} onDeliveryChange={handleDeliveryChange} />
+      <Form className={styles.form} onDeliveryChange={handleDeliveryChange} data-test-id='form' />
 
-      <div className={styles.cart}>
+      <div className={styles.cart} data-test-id='items'>
         <ul className={styles.items} data-test-id='cart-items-list'>
           {cartItems.map(item => (
             <li key={v1()} data-test-id='cart-item'>
@@ -39,7 +39,7 @@ export const Order = (): JSX.Element => {
           ))}
         </ul>
         <Divider />
-        <div className={styles.amount}>
+        <div className={styles.amount} data-test-id='total'>
           <Typography.Text tag='div' view='primary-small' className={styles.price}>
             Subtotal: <Amount value={totalCartPrice} minority={0} currency='RUB' bold='none' />
           </Typography.Text>
