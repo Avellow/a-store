@@ -1,27 +1,28 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    color: var(--black);
+  margin: 0;
+  padding: 0;
+  color: var(--black);
 
-    font-family: var(--font-family);
+  font-family: var(--font-family);
 
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 
-    color: inherit;
+  color: inherit;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --black: #3B434E;
+  --black: #3b434e;
 
-    --font-family: "Styrene UI", system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif, sans-serif;
+  --my-font-family: "Styrene UI", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Helvetica, sans-serif, sans-serif;
 }
