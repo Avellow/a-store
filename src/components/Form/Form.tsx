@@ -1,4 +1,6 @@
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 import { useState } from 'react';
 import { Input, InputProps } from '@alfalab/core-components/input';
 import { PhoneInput } from '@alfalab/core-components/phone-input';
@@ -12,20 +14,9 @@ import cn from 'classnames';
 
 import styles from './Form.module.css';
 import { FormProps } from './Form.props';
-import { deliveryTypeError, emailError, mustBeFilled, paymentMethodError, phoneNumberError, symbolLengthError } from '../../vendor/errorMessages';
-import { deliveryTypes, emailRegex, paymentMethods, privacyPolicyAgreement } from '../../vendor/constants';
+import { confirmError, deliveryTypeError, emailError, mustBeFilled, paymentMethodError, phoneNumberError } from '../../vendor/errorMessages';
+import { deliveryTypes, paymentMethods, PaymentMethodsEnum, phoneRegExp, privacyPolicyAgreement } from '../../vendor/constants';
 import { DeliveryEnum } from '../../page-components/Order/delivery.reducer';
-
-type InputsField = {
-  name: string,
-  email: string,
-  phoneNumber: string,
-  address: string,
-  delivery: string,
-  promo: string,
-  comment: string,
-  paymentMethod: string,
-};
 
 const makeInputProps = (label: string, placeholder?: string): InputProps => ({
   label,
@@ -37,6 +28,20 @@ const makeInputProps = (label: string, placeholder?: string): InputProps => ({
   block: true
 });
 
+const schema = yup.object({
+  name: yup.string().max(100).required(mustBeFilled),
+  email: yup.string().email(emailError).required(mustBeFilled),
+  phone: yup.string().matches(phoneRegExp, phoneNumberError).required(mustBeFilled),
+  address: yup.string().max(100),
+  delivery: yup.string().oneOf(Object.values(DeliveryEnum)).required(deliveryTypeError),
+  promo: yup.string().max(100),
+  privacyPolicy: yup.boolean().isTrue().required(confirmError),
+  comment: yup.string().max(200),
+  payment: yup.string().oneOf(Object.values(PaymentMethodsEnum)).required(paymentMethodError),
+
+}).required();
+type FormData = yup.InferType<typeof schema>;
+
 export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element => {
   const {
     register,
@@ -45,19 +50,20 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { isDirty, errors },
     getFieldState
-  } = useForm<InputsField>({
-    mode: 'onChange'
+  } = useForm<FormData>({
+    mode: 'all',
+    resolver: yupResolver(schema)
   });
 
   const [isPrivacyChecked, setIsPrivacyChecked] = useState(false);
   const handleChangePrivacyChecked = () => setIsPrivacyChecked(!isPrivacyChecked);
 
-  const onSubmit: SubmitHandler<InputsField> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(errors)
     console.log(data)
   }
 
-  const isFieldCorrect = (fieldName: keyof InputsField): boolean => {
+  const isFieldCorrect = (fieldName: keyof FormData): boolean => {
     return getFieldState(fieldName).isDirty && !getFieldState(fieldName).error
   }
 
@@ -66,22 +72,19 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
       <Input
         {...makeInputProps('ФИО', 'Фамилия Имя Отчество')}
-        {...register('name', { required: true, maxLength: 100 })}
+        {...register('name')}
 
-        error={errors.name?.type === 'maxLength' && symbolLengthError('max', 100)}
+        error={errors.name?.message}
         success={isFieldCorrect('name')}
 
         dataTestId='name-input'
       />
 
       <Input
-        {...makeInputProps('e-mail', 'example@site.ru')}
-        {...register('email', {
-          required: true,
-          pattern: { message: emailError, value: emailRegex }
-        })}
+        {...makeInputProps('email', 'example@site.ru')}
+        {...register('email')}
 
-        error={errors.email?.type === 'pattern' && emailError}
+        error={errors.email?.message}
         success={isFieldCorrect('email')}
 
         dataTestId='email-input'
@@ -89,10 +92,10 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
       <PhoneInput
         {...makeInputProps('Номер телефона', '+7 000 000-00-00')}
-        {...register('phoneNumber', { required: mustBeFilled, minLength: 16 })}
+        {...register('phone')}
 
-        error={errors.phoneNumber?.type === 'minLength' && phoneNumberError}
-        success={isFieldCorrect('phoneNumber')}
+        error={errors.phone?.message}
+        success={isFieldCorrect('phone')}
 
         dataTestId='phone-input'
       />
@@ -177,7 +180,7 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
       <Controller
         control={control}
-        name='paymentMethod'
+        name='payment'
         rules={{ required: paymentMethodError }}
         render={({ field: { value, onChange }, fieldState: { error } }) => {
           const handleChange = (_: unknown, payload?: { value: string }) => {

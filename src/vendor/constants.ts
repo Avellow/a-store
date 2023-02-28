@@ -60,10 +60,17 @@ export const deliveryTypes = [
   },
 ];
 
+export enum PaymentMethodsEnum {
+  card = "card",
+  promocode = "promocode",
+}
+
 export const paymentMethods = [
-  { label: "Банковская карта", radioName: "card" },
-  { label: "Промокод", radioName: "promocode" },
+  { label: "Банковская карта", radioName: PaymentMethodsEnum.card },
+  { label: "Промокод", radioName: PaymentMethodsEnum.promocode },
 ];
 
 export const privacyPolicyAgreement =
   "Согласен с политикой конфиденциальности и обработки персональных данных";
+
+export const phoneRegExp = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]{7,10}$/;

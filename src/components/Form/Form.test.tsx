@@ -70,10 +70,10 @@ describe('form component', () => {
     expect(await screen.findByTestId('submit')).toBeEnabled();
   });
 
-  it('should show alerts if any radioboxes were not checked', async () => {
+  it('should show alerts if any inputs were not filled', async () => {
     render(<Form />);
 
     fireEvent.submit(await screen.findByTestId('submit'));
-    expect(await screen.findAllByRole('alert')).toHaveLength(2);
+    expect(await screen.findAllByRole('alert')).toHaveLength(5);
   });
 });
