@@ -67,10 +67,12 @@ export const ConfigForm = ({ productOptions, onConfirm, className }: ConfigFormP
     event.preventDefault();
 
     const formatedOptions: CartItemOptionsType = {};
-    Object.entries(selectedOptions).forEach(([prop, value]) => {
+
+    for (let prop in selectedOptions) {
       const singlePropForm = singularize(prop);
-      formatedOptions[singlePropForm] = value.content as string | number
-    });
+      const value = selectedOptions[prop as keyof SelectedOptionsType];
+      formatedOptions[singlePropForm] = value?.content as string | number;
+    }
 
     onConfirm && onConfirm(formatedOptions);
   };

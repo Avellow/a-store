@@ -65,7 +65,7 @@ Object {
                   aria-hidden="true"
                   class="form-control__hiddenLabel_3j482"
                 >
-                  e-mail
+                  email
                 </span>
                 <div
                   class="form-control__label_3j482 form-control__label_tvifb label"
@@ -73,14 +73,14 @@ Object {
                   <span
                     class="form-control__labelInner_3j482"
                   >
-                    e-mail
+                    email
                   </span>
                 </div>
                 <div
                   class="form-control__input_3j482"
                 >
                   <input
-                    aria-label="e-mail"
+                    aria-label="email"
                     class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                     data-test-id="email-input"
                     name="email"
@@ -123,7 +123,7 @@ Object {
                     aria-label="Номер телефона"
                     class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                     data-test-id="phone-input"
-                    name="phoneNumber"
+                    name="phone"
                     placeholder="+7 000 000-00-00"
                     type="tel"
                     value=""
@@ -547,7 +547,7 @@ Object {
                 aria-hidden="true"
                 class="form-control__hiddenLabel_3j482"
               >
-                e-mail
+                email
               </span>
               <div
                 class="form-control__label_3j482 form-control__label_tvifb label"
@@ -555,14 +555,14 @@ Object {
                 <span
                   class="form-control__labelInner_3j482"
                 >
-                  e-mail
+                  email
                 </span>
               </div>
               <div
                 class="form-control__input_3j482"
               >
                 <input
-                  aria-label="e-mail"
+                  aria-label="email"
                   class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                   data-test-id="email-input"
                   name="email"
@@ -605,7 +605,7 @@ Object {
                   aria-label="Номер телефона"
                   class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                   data-test-id="phone-input"
-                  name="phoneNumber"
+                  name="phone"
                   placeholder="+7 000 000-00-00"
                   type="tel"
                   value=""
