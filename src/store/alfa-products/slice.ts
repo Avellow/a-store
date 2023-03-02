@@ -4,13 +4,13 @@ import { ProductType } from "../../types/api";
 const SLICE_NAME = "alfa-products";
 
 type ProductsStateType = {
-  product: ProductType[];
+  products: ProductType[];
   isLoading: boolean;
   hasError: boolean;
 };
 
 const initialState: ProductsStateType = {
-  product: [],
+  products: [],
   isLoading: false,
   hasError: false,
 };
@@ -25,7 +25,7 @@ const success: CaseReducer<ProductsStateType, PayloadAction<ProductType[]>> = (
   action
 ) => {
   state.isLoading = false;
-  state.product = action.payload;
+  state.products = action.payload;
   state.hasError = false;
 };
 

@@ -1,11 +1,10 @@
 import { routerType } from "./router.types";
 import {
-  Basket,
   Contacts,
   Home,
-  MadeInAlfa,
+  MadeInAlfaPage,
   NotFound,
-  YourDesign,
+  YourDesignPage,
   Product
 } from "../page-components";
 
@@ -17,7 +16,7 @@ export const pagesData: routerType[] = [
   },
   {
     path: 'made-in-alfa',
-    element: <MadeInAlfa />,
+    element: <MadeInAlfaPage />,
     title: 'madeInAlfa',
     linkTitle: 'Сделано в Альфе'
   },
@@ -28,7 +27,7 @@ export const pagesData: routerType[] = [
   },
   {
     path: 'your-design',
-    element: <YourDesign />,
+    element: <YourDesignPage />,
     title: 'yourDesign',
     linkTitle: 'Свой дизайн',
   },
@@ -44,14 +43,8 @@ export const pagesData: routerType[] = [
     linkTitle: 'Контакты'
   },
   {
-    path: 'basket',
-    element: <Basket />,
-    title: 'basket'
-  },
-  {
     path: '*',
     element: <NotFound />,
     title: 'notFound'
   },
 ]
-

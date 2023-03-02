@@ -1,14 +1,13 @@
 import { useEffect } from 'react';
 import { CardSkeletons, Group } from '../../components';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { groupsActions, groupsSelector, isLoadingSelector } from '../../store/design-groups';
+import { groupsActions, groupsStateSelector } from '../../store/design-groups';
 import { yourDesignSubtitleText, yourDesignTitleText } from '../../vendor/constants';
 import Page from "../Page";
 
 export const YourDesign = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const groups = useAppSelector(groupsSelector);
-  const isLoading = useAppSelector(isLoadingSelector);
+  const { groups, isLoading } = useAppSelector(groupsStateSelector);
 
   useEffect(() => {
     dispatch(groupsActions.request());
@@ -16,11 +15,7 @@ export const YourDesign = (): JSX.Element => {
   }, []);
 
   return (
-    <Page
-      data-testid='your-design-page'
-      title={yourDesignTitleText}
-      subtitle={yourDesignSubtitleText}
-    >
+    <>
       {isLoading && !groups.length && <CardSkeletons />}
 
       {
@@ -35,9 +30,21 @@ export const YourDesign = (): JSX.Element => {
 
       {
         !isLoading && !groups.length && (
-          <span>Группы с товарами не найдены</span>
+          <span data-testid='no-groups'>Группы с товарами не найдены</span>
         )
       }
+    </>
+  );
+};
+
+export function YourDesignPage() {
+  return (
+    <Page
+      data-testid='your-design-page'
+      title={yourDesignTitleText}
+      subtitle={yourDesignSubtitleText}
+    >
+      <YourDesign />
     </Page>
   );
 };

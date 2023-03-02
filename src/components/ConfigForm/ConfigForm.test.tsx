@@ -2,11 +2,11 @@ import { render, screen, configure } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { ConfigForm } from './ConfigForm';
-import { ConfigFormProps, SelectOptions } from './ConfigForm.props';
+import { ConfigFormProps, ProductConfigOptionsType } from './ConfigForm.props';
 
 configure({ testIdAttribute: 'data-test-id' });
 
-const selectableOptions: SelectOptions = {
+const selectableOptions: ProductConfigOptionsType = {
   'colors': ['white', 'black'],
   'sizes': ['M', 'S', 'XXL'],
   'models': undefined,
@@ -29,7 +29,7 @@ describe('Config Form', () => {
 
     expect(screen.getByTestId('color-select')).toBeInTheDocument();
     expect(screen.getByTestId('size-select')).toBeInTheDocument();
-    expect(screen.getByTestId('sticker-select')).toBeInTheDocument();
+    expect(screen.getByTestId('stickerNumber-select')).toBeInTheDocument();
 
     expect(screen.queryByTestId('model-select')).not.toBeInTheDocument();
   });

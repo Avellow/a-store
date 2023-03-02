@@ -7,4 +7,4 @@ export const isLoadingSelector = (state: ApplicationState) =>
 export const hasErrorSelector = (state: ApplicationState) =>
   productsStateSelector(state).hasError;
 export const productsSelector = (state: ApplicationState) =>
-  productsStateSelector(state).product;
+  productsStateSelector(state).products;

@@ -1,0 +1,634 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart-item component view should be rendered 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="item"
+      >
+        <div
+          class="icon-view__componentWrapper_1wtym icon-view__size_80_1wtym"
+          data-test-id="img"
+        >
+          <div
+            class="icon-view__component_1wtym"
+          >
+            <svg
+              focusable="false"
+              height="80"
+              viewBox="0 0 80 80"
+              width="80"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="icon-view__bg_1wtym"
+                d="M1.30048 20.5263C2.75571 10.3588 10.3588 2.75571 20.5263 1.30048C25.7164 0.557648 32.2076 0 40 0C47.7924 0 54.2836 0.557648 59.4737 1.30048C69.6412 2.75571 77.2443 10.3588 78.6995 20.5263C79.4423 25.7164 80 32.2076 80 40C80 47.7924 79.4423 54.2836 78.6995 59.4737C77.2443 69.6412 69.6412 77.2443 59.4737 78.6995C54.2836 79.4423 47.7924 80 40 80C32.2076 80 25.7164 79.4423 20.5263 78.6995C10.3588 77.2443 2.75571 69.6412 1.30048 59.4737C0.557648 54.2836 0 47.7924 0 40C0 32.2076 0.557648 25.7164 1.30048 20.5263Z"
+                style="fill: var(--color-light-bg-secondary);"
+              />
+              <defs>
+                <pattern
+                  height="100%"
+                  id="https68519498jpg_80"
+                  width="100%"
+                >
+                  <image
+                    height="100%"
+                    href="https://68519498.jpg"
+                    preserveAspectRatio="xMidYMid slice"
+                    width="100%"
+                  />
+                </pattern>
+              </defs>
+              <path
+                d="M1.30048 20.5263C2.75571 10.3588 10.3588 2.75571 20.5263 1.30048C25.7164 0.557648 32.2076 0 40 0C47.7924 0 54.2836 0.557648 59.4737 1.30048C69.6412 2.75571 77.2443 10.3588 78.6995 20.5263C79.4423 25.7164 80 32.2076 80 40C80 47.7924 79.4423 54.2836 78.6995 59.4737C77.2443 69.6412 69.6412 77.2443 59.4737 78.6995C54.2836 79.4423 47.7924 80 40 80C32.2076 80 25.7164 79.4423 20.5263 78.6995C10.3588 77.2443 2.75571 69.6412 1.30048 59.4737C0.557648 54.2836 0 47.7924 0 40C0 32.2076 0.557648 25.7164 1.30048 20.5263Z"
+                style="fill: url(#https68519498jpg_80);"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="info"
+        >
+          <div
+            class="details"
+          >
+            <h4
+              class="typography__component_h1nzy title typography__styrene-xsmall_qohs3 typography__bold_h1nzy typography__primary_1faea"
+              data-test-id="title"
+            >
+              Тестовое худи
+            </h4>
+            <ul
+              class="options"
+            >
+              <li>
+                <span
+                  class="option typography__primary-small_xcdcz typography__bold_xcdcz"
+                  data-test-id="stickerNumber-option"
+                >
+                  номер стикера
+                  : 
+                  1
+                </span>
+              </li>
+              <li>
+                <span
+                  class="option typography__primary-small_xcdcz typography__bold_xcdcz"
+                  data-test-id="color-option"
+                >
+                  цвет
+                  : 
+                  белый
+                </span>
+              </li>
+              <li>
+                <span
+                  class="option typography__primary-small_xcdcz typography__bold_xcdcz"
+                  data-test-id="size-option"
+                >
+                  размер
+                  : 
+                  M
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="quantityControl"
+          >
+            <div
+              class="control"
+            >
+              <button
+                class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button controlIcon icon-button__primary_7jncp icon-button__component_7jncp"
+                data-test-id="decrease-quantity"
+                type="button"
+              >
+                <span
+                  class="button__text_onnkc button__stretchText_onnkc"
+                >
+                  <span
+                    class="icon-button__iconWrapper_gy47p icon-button__xs_gy47p"
+                  >
+                    <svg
+                      class="icon-button__icon_gy47p"
+                      fill="currentColor"
+                      focusable="false"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M3 11h18v2H3z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+              <span
+                data-test-id="quantity"
+              >
+                2
+              </span>
+              <button
+                class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button controlIcon icon-button__primary_7jncp icon-button__component_7jncp"
+                data-test-id="increase-quantity"
+                type="button"
+              >
+                <span
+                  class="button__text_onnkc button__stretchText_onnkc"
+                >
+                  <span
+                    class="icon-button__iconWrapper_gy47p icon-button__xs_gy47p"
+                  >
+                    <svg
+                      class="icon-button__icon_gy47p"
+                      fill="currentColor"
+                      focusable="false"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M11 11H5v2h6v6h2v-6h6v-2h-6V5h-2v6z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <span
+              class="amount__component_96zmx price amount__defaultStyles_96zmx"
+              data-test-id="total-price"
+            >
+              3 598
+              <span
+                class="amount__defaultMinor_96zmx"
+              >
+                 ₽
+              </span>
+            </span>
+          </div>
+        </div>
+        <button
+          class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button icon-button__primary_jaon2 icon-button__component_jaon2"
+          data-test-id="remove-item"
+          type="button"
+        >
+          <span
+            class="button__text_onnkc button__stretchText_onnkc"
+          >
+            <span
+              class="icon-button__iconWrapper_gy47p icon-button__s_gy47p"
+            >
+              <svg
+                class="icon-button__icon_gy47p"
+                focusable="false"
+                height="24"
+                role="img"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                  />
+                  <path
+                    d="M4 8v12.5C4 21.878 5.122 23 6.5 23h12c1.378 0 2.5-1.122 2.5-2.5V8h-1v12.5c0 .827-.673 1.5-1.5 1.5h-12c-.827 0-1.5-.673-1.5-1.5V8H4zM3 5.5C3 4.673 3.673 4 4.5 4h16c.827 0 1.5.673 1.5 1.5V8h1V5.5C23 4.122 21.878 3 20.5 3H16V1.5c0-.827-.673-1.5-1.5-1.5h-4C9.673 0 9 .673 9 1.5V3H4.5A2.503 2.503 0 002 5.5V8h1V5.5zm7-4a.5.5 0 01.5-.5h4a.5.5 0 01.5.5V3h-5V1.5z"
+                    fill="#0B1F35"
+                  />
+                  <path
+                    d="M9 9h2v9H9V9zm5 0h2v9h-2V9z"
+                    fill="#0B1F35"
+                    opacity=".3"
+                  />
+                </g>
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div>
+      <div
+        class="item"
+      >
+        <div
+          class="icon-view__componentWrapper_1wtym icon-view__size_80_1wtym"
+          data-test-id="img"
+        >
+          <div
+            class="icon-view__component_1wtym"
+          >
+            <svg
+              focusable="false"
+              height="80"
+              viewBox="0 0 80 80"
+              width="80"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="icon-view__bg_1wtym"
+                d="M1.30048 20.5263C2.75571 10.3588 10.3588 2.75571 20.5263 1.30048C25.7164 0.557648 32.2076 0 40 0C47.7924 0 54.2836 0.557648 59.4737 1.30048C69.6412 2.75571 77.2443 10.3588 78.6995 20.5263C79.4423 25.7164 80 32.2076 80 40C80 47.7924 79.4423 54.2836 78.6995 59.4737C77.2443 69.6412 69.6412 77.2443 59.4737 78.6995C54.2836 79.4423 47.7924 80 40 80C32.2076 80 25.7164 79.4423 20.5263 78.6995C10.3588 77.2443 2.75571 69.6412 1.30048 59.4737C0.557648 54.2836 0 47.7924 0 40C0 32.2076 0.557648 25.7164 1.30048 20.5263Z"
+                style="fill: var(--color-light-bg-secondary);"
+              />
+              <defs>
+                <pattern
+                  height="100%"
+                  id="https68519498jpg_80"
+                  width="100%"
+                >
+                  <image
+                    height="100%"
+                    href="https://68519498.jpg"
+                    preserveAspectRatio="xMidYMid slice"
+                    width="100%"
+                  />
+                </pattern>
+              </defs>
+              <path
+                d="M1.30048 20.5263C2.75571 10.3588 10.3588 2.75571 20.5263 1.30048C25.7164 0.557648 32.2076 0 40 0C47.7924 0 54.2836 0.557648 59.4737 1.30048C69.6412 2.75571 77.2443 10.3588 78.6995 20.5263C79.4423 25.7164 80 32.2076 80 40C80 47.7924 79.4423 54.2836 78.6995 59.4737C77.2443 69.6412 69.6412 77.2443 59.4737 78.6995C54.2836 79.4423 47.7924 80 40 80C32.2076 80 25.7164 79.4423 20.5263 78.6995C10.3588 77.2443 2.75571 69.6412 1.30048 59.4737C0.557648 54.2836 0 47.7924 0 40C0 32.2076 0.557648 25.7164 1.30048 20.5263Z"
+                style="fill: url(#https68519498jpg_80);"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="info"
+        >
+          <div
+            class="details"
+          >
+            <h4
+              class="typography__component_h1nzy title typography__styrene-xsmall_qohs3 typography__bold_h1nzy typography__primary_1faea"
+              data-test-id="title"
+            >
+              Тестовый рюкзак
+            </h4>
+            <ul
+              class="options"
+            />
+          </div>
+          <div
+            class="quantityControl"
+          >
+            <div
+              class="control"
+            >
+              <button
+                class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button controlIcon icon-button__primary_7jncp icon-button__component_7jncp"
+                data-test-id="decrease-quantity"
+                type="button"
+              >
+                <span
+                  class="button__text_onnkc button__stretchText_onnkc"
+                >
+                  <span
+                    class="icon-button__iconWrapper_gy47p icon-button__xs_gy47p"
+                  >
+                    <svg
+                      class="icon-button__icon_gy47p"
+                      fill="currentColor"
+                      focusable="false"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M3 11h18v2H3z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+              <span
+                data-test-id="quantity"
+              >
+                3
+              </span>
+              <button
+                class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button controlIcon icon-button__primary_7jncp icon-button__component_7jncp"
+                data-test-id="increase-quantity"
+                type="button"
+              >
+                <span
+                  class="button__text_onnkc button__stretchText_onnkc"
+                >
+                  <span
+                    class="icon-button__iconWrapper_gy47p icon-button__xs_gy47p"
+                  >
+                    <svg
+                      class="icon-button__icon_gy47p"
+                      fill="currentColor"
+                      focusable="false"
+                      height="24"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="24"
+                    >
+                      <path
+                        d="M11 11H5v2h6v6h2v-6h6v-2h-6V5h-2v6z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <span
+              class="amount__component_96zmx price amount__defaultStyles_96zmx"
+              data-test-id="total-price"
+            >
+              11 997
+              <span
+                class="amount__defaultMinor_96zmx"
+              >
+                 ₽
+              </span>
+            </span>
+          </div>
+        </div>
+        <button
+          class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button icon-button__primary_jaon2 icon-button__component_jaon2"
+          data-test-id="remove-item"
+          type="button"
+        >
+          <span
+            class="button__text_onnkc button__stretchText_onnkc"
+          >
+            <span
+              class="icon-button__iconWrapper_gy47p icon-button__s_gy47p"
+            >
+              <svg
+                class="icon-button__icon_gy47p"
+                focusable="false"
+                height="24"
+                role="img"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                  />
+                  <path
+                    d="M4 8v12.5C4 21.878 5.122 23 6.5 23h12c1.378 0 2.5-1.122 2.5-2.5V8h-1v12.5c0 .827-.673 1.5-1.5 1.5h-12c-.827 0-1.5-.673-1.5-1.5V8H4zM3 5.5C3 4.673 3.673 4 4.5 4h16c.827 0 1.5.673 1.5 1.5V8h1V5.5C23 4.122 21.878 3 20.5 3H16V1.5c0-.827-.673-1.5-1.5-1.5h-4C9.673 0 9 .673 9 1.5V3H4.5A2.503 2.503 0 002 5.5V8h1V5.5zm7-4a.5.5 0 01.5-.5h4a.5.5 0 01.5.5V3h-5V1.5z"
+                    fill="#0B1F35"
+                  />
+                  <path
+                    d="M9 9h2v9H9V9zm5 0h2v9h-2V9z"
+                    fill="#0B1F35"
+                    opacity=".3"
+                  />
+                </g>
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="item"
+    >
+      <div
+        class="icon-view__componentWrapper_1wtym icon-view__size_80_1wtym"
+        data-test-id="img"
+      >
+        <div
+          class="icon-view__component_1wtym"
+        >
+          <svg
+            focusable="false"
+            height="80"
+            viewBox="0 0 80 80"
+            width="80"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="icon-view__bg_1wtym"
+              d="M1.30048 20.5263C2.75571 10.3588 10.3588 2.75571 20.5263 1.30048C25.7164 0.557648 32.2076 0 40 0C47.7924 0 54.2836 0.557648 59.4737 1.30048C69.6412 2.75571 77.2443 10.3588 78.6995 20.5263C79.4423 25.7164 80 32.2076 80 40C80 47.7924 79.4423 54.2836 78.6995 59.4737C77.2443 69.6412 69.6412 77.2443 59.4737 78.6995C54.2836 79.4423 47.7924 80 40 80C32.2076 80 25.7164 79.4423 20.5263 78.6995C10.3588 77.2443 2.75571 69.6412 1.30048 59.4737C0.557648 54.2836 0 47.7924 0 40C0 32.2076 0.557648 25.7164 1.30048 20.5263Z"
+              style="fill: var(--color-light-bg-secondary);"
+            />
+            <defs>
+              <pattern
+                height="100%"
+                id="https68519498jpg_80"
+                width="100%"
+              >
+                <image
+                  height="100%"
+                  href="https://68519498.jpg"
+                  preserveAspectRatio="xMidYMid slice"
+                  width="100%"
+                />
+              </pattern>
+            </defs>
+            <path
+              d="M1.30048 20.5263C2.75571 10.3588 10.3588 2.75571 20.5263 1.30048C25.7164 0.557648 32.2076 0 40 0C47.7924 0 54.2836 0.557648 59.4737 1.30048C69.6412 2.75571 77.2443 10.3588 78.6995 20.5263C79.4423 25.7164 80 32.2076 80 40C80 47.7924 79.4423 54.2836 78.6995 59.4737C77.2443 69.6412 69.6412 77.2443 59.4737 78.6995C54.2836 79.4423 47.7924 80 40 80C32.2076 80 25.7164 79.4423 20.5263 78.6995C10.3588 77.2443 2.75571 69.6412 1.30048 59.4737C0.557648 54.2836 0 47.7924 0 40C0 32.2076 0.557648 25.7164 1.30048 20.5263Z"
+              style="fill: url(#https68519498jpg_80);"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="info"
+      >
+        <div
+          class="details"
+        >
+          <h4
+            class="typography__component_h1nzy title typography__styrene-xsmall_qohs3 typography__bold_h1nzy typography__primary_1faea"
+            data-test-id="title"
+          >
+            Тестовый рюкзак
+          </h4>
+          <ul
+            class="options"
+          />
+        </div>
+        <div
+          class="quantityControl"
+        >
+          <div
+            class="control"
+          >
+            <button
+              class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button controlIcon icon-button__primary_7jncp icon-button__component_7jncp"
+              data-test-id="decrease-quantity"
+              type="button"
+            >
+              <span
+                class="button__text_onnkc button__stretchText_onnkc"
+              >
+                <span
+                  class="icon-button__iconWrapper_gy47p icon-button__xs_gy47p"
+                >
+                  <svg
+                    class="icon-button__icon_gy47p"
+                    fill="currentColor"
+                    focusable="false"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M3 11h18v2H3z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+            <span
+              data-test-id="quantity"
+            >
+              3
+            </span>
+            <button
+              class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button controlIcon icon-button__primary_7jncp icon-button__component_7jncp"
+              data-test-id="increase-quantity"
+              type="button"
+            >
+              <span
+                class="button__text_onnkc button__stretchText_onnkc"
+              >
+                <span
+                  class="icon-button__iconWrapper_gy47p icon-button__xs_gy47p"
+                >
+                  <svg
+                    class="icon-button__icon_gy47p"
+                    fill="currentColor"
+                    focusable="false"
+                    height="24"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path
+                      d="M11 11H5v2h6v6h2v-6h6v-2h-6V5h-2v6z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+          <span
+            class="amount__component_96zmx price amount__defaultStyles_96zmx"
+            data-test-id="total-price"
+          >
+            11 997
+            <span
+              class="amount__defaultMinor_96zmx"
+            >
+               ₽
+            </span>
+          </span>
+        </div>
+      </div>
+      <button
+        class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button icon-button__primary_jaon2 icon-button__component_jaon2"
+        data-test-id="remove-item"
+        type="button"
+      >
+        <span
+          class="button__text_onnkc button__stretchText_onnkc"
+        >
+          <span
+            class="icon-button__iconWrapper_gy47p icon-button__s_gy47p"
+          >
+            <svg
+              class="icon-button__icon_gy47p"
+              focusable="false"
+              height="24"
+              role="img"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <g
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                />
+                <path
+                  d="M4 8v12.5C4 21.878 5.122 23 6.5 23h12c1.378 0 2.5-1.122 2.5-2.5V8h-1v12.5c0 .827-.673 1.5-1.5 1.5h-12c-.827 0-1.5-.673-1.5-1.5V8H4zM3 5.5C3 4.673 3.673 4 4.5 4h16c.827 0 1.5.673 1.5 1.5V8h1V5.5C23 4.122 21.878 3 20.5 3H16V1.5c0-.827-.673-1.5-1.5-1.5h-4C9.673 0 9 .673 9 1.5V3H4.5A2.503 2.503 0 002 5.5V8h1V5.5zm7-4a.5.5 0 01.5-.5h4a.5.5 0 01.5.5V3h-5V1.5z"
+                  fill="#0B1F35"
+                />
+                <path
+                  d="M9 9h2v9H9V9zm5 0h2v9h-2V9z"
+                  fill="#0B1F35"
+                  opacity=".3"
+                />
+              </g>
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -1,0 +1,35 @@
+.panel {
+  min-width: 650px;
+}
+
+.title {
+  font-style: italic;
+  margin: 20px 15px 0;
+}
+
+.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.total {
+  font-style: italic;
+  text-align: end;
+}
+
+.button {
+  background-color: #000;
+  color: #fff;
+  margin: 40px auto 0;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 750px) {
+  .panel {
+    min-width: 0;
+  }
+}

@@ -1,60 +1,67 @@
-import { renderWithRouterAndProvider } from '../../tests/helpers/renderWithRouterAndProvider'
 import { screen } from '@testing-library/react';
-import { testingGroups } from '../../tests/helpers/groups';
-import * as reduxHooks from '../../store';
-import { groupsActions } from '../../store/design-groups/slice';
+import { YourDesign } from './YourDesign';
+import { renderWithRouterAndProvider } from '../../tests/helpers/renderWithRouterAndProvider'
 import '@testing-library/jest-dom/extend-expect';
 
-const pagePath = '/your-design';
-const render = () => renderWithRouterAndProvider(null, pagePath);
-jest.mock('../../store');
+import * as reduxHooks from '../../store';
+import { testingGroups } from '../../tests/helpers/groups';
 
-const mockedUseSelector = jest.spyOn(reduxHooks, 'useAppSelector');
-const mockedUseDispatch = jest.spyOn(reduxHooks, 'useAppDispatch');
+describe('Your-Design component', () => {
 
-describe('Your Design component', () => {
+  const renderComponent = () => renderWithRouterAndProvider(<YourDesign />);
+
+  const mockedUseSelector = jest.spyOn(reduxHooks, 'useAppSelector');
+  const mockedUseDispatch = jest.spyOn(reduxHooks, 'useAppDispatch');
 
   beforeEach(() => {
-    mockedUseSelector.mockReturnValue([]);
-  });
-
-  it('should render product groups', () => {
     mockedUseDispatch.mockReturnValue(jest.fn());
-    render();
+    mockedUseSelector.mockReturnValue({ isLoading: false, groups: [] });
   });
 
-  it('should render 2 testing groups', () => {
-    mockedUseSelector.mockReturnValue(testingGroups);
-    mockedUseDispatch.mockReturnValue(jest.fn());
-    render();
-    expect(screen.getAllByTestId('your-design-group')).toHaveLength(2);
+  afterAll(() => {
+    jest.restoreAllMocks();
   });
 
-  it('should have title', () => {
-    mockedUseDispatch.mockReturnValue(jest.fn());
-    render();
-    expect(screen.getByText('Свой дизайн')).toBeInTheDocument();
+  it('should be rendered', () => {
+    renderComponent();
   });
 
-  it('should dispatch action', () => {
-    const dispatch = jest.fn();
-    mockedUseDispatch.mockReturnValue(dispatch);
-    const mockedGroupsRequest = jest.spyOn(groupsActions, 'request');
-
-    render();
-
-    expect(dispatch).toHaveBeenCalled();
-    expect(mockedGroupsRequest).toHaveBeenCalled();
+  it('should call dispatch once on mount', () => {
+    renderComponent();
+    expect(mockedUseDispatch).toHaveBeenCalledTimes(1);
   });
 
-  it('should show message if there are no products', async () => {
-    mockedUseSelector.mockReturnValue([]);
-    mockedUseSelector.mockReturnValue(false);
-    mockedUseDispatch.mockReturnValue(jest.fn());
-    render();
+  it('should show skeleton while fetching data', () => {
+    mockedUseSelector.mockReturnValue({ isLoading: true, groups: [] });
+    renderComponent();
+    expect(screen.getAllByTestId('card-skeleton')).not.toHaveLength(0);
+  });
 
-    expect(screen.queryByTestId('your-design-group')).toBeNull();
-    const text = await screen.findByText('Группы с товарами не найдены')
-    expect(text).toBeInTheDocument();
+  it('should show groups with products after fetching succeeded', () => {
+    mockedUseSelector.mockReturnValue({ isLoading: false, groups: testingGroups });
+    renderComponent();
+    expect(screen.getAllByTestId('your-design-group')).not.toHaveLength(0);
+  });
+
+  it('should show message if there are no groups found', () => {
+    renderComponent();
+    expect(screen.getByTestId('no-groups')).toBeInTheDocument();
+  });
+});
+
+
+describe('Your-Design PAGE with Router', () => {
+  const pagePath = '/your-design';
+  const renderComponent = () => renderWithRouterAndProvider(null, pagePath);
+
+  it('should be rendered as page with router', () => {
+    renderComponent();
+    expect(screen.getByTestId('your-design-page')).toBeInTheDocument();
+  });
+
+  it('should render title and subtitle', () => {
+    renderComponent();
+    expect(screen.getByTestId('page-title')).toBeInTheDocument();
+    expect(screen.getByTestId('page-subtitle')).toBeInTheDocument();
   });
 });

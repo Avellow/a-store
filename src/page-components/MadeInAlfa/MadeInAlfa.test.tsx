@@ -1,57 +1,66 @@
-import { renderWithRouterAndProvider } from '../../tests/helpers/renderWithRouterAndProvider'
 import { screen } from '@testing-library/react';
-import { madeInAlfaTestProducts } from '../../tests/helpers/products';
-import * as reduxHooks from '../../store';
-import { productsActions } from '../../store/alfa-products/slice';
+import { MadeInAlfa } from './MadeInAlfa';
+import { renderWithRouterAndProvider } from '../../tests/helpers/renderWithRouterAndProvider'
 import '@testing-library/jest-dom/extend-expect';
 
-const pagePath = '/made-in-alfa';
-const render = () => renderWithRouterAndProvider(null, pagePath);
-jest.mock('../../store');
+import * as reduxHooks from '../../store';
+import { testingProducts } from '../../tests/helpers/products';
 
-const mockedUseSelector = jest.spyOn(reduxHooks, 'useAppSelector');
-const mockedUseDispatch = jest.spyOn(reduxHooks, 'useAppDispatch');
+describe('Made-in-Alfa component', () => {
 
-describe('Made in Alfa component', () => {
+  const renderComponent = () => renderWithRouterAndProvider(<MadeInAlfa />);
+
+  const mockedUseSelector = jest.spyOn(reduxHooks, 'useAppSelector');
+  const mockedUseDispatch = jest.spyOn(reduxHooks, 'useAppDispatch');
 
   beforeEach(() => {
-    mockedUseSelector.mockReturnValue([]);
-  });
-
-  it('should render product cards', () => {
     mockedUseDispatch.mockReturnValue(jest.fn());
-    render();
+    mockedUseSelector.mockReturnValue({ isLoading: false, products: [] });
   });
 
-  it('should render 3 testing product cards', () => {
-    mockedUseSelector.mockReturnValue(madeInAlfaTestProducts);
-    mockedUseDispatch.mockReturnValue(jest.fn());
-    render();
-    expect(screen.getAllByTestId('made-in-alfa-product')).toHaveLength(3);
+  afterAll(() => {
+    jest.restoreAllMocks();
   });
 
-  it('should have title', () => {
-    mockedUseDispatch.mockReturnValue(jest.fn());
-    render();
-    expect(screen.getByText('Сделано в Альфе')).toBeInTheDocument();
+  it('should be rendered', () => {
+    renderComponent();
   });
 
-  it('should dispatch action', () => {
-    const dispatch = jest.fn();
-    mockedUseDispatch.mockReturnValue(dispatch);
-    const mockedCardsRequest = jest.spyOn(productsActions, 'request');
-
-    render();
-
-    expect(dispatch).toHaveBeenCalled();
-    expect(mockedCardsRequest).toHaveBeenCalled();
+  it('should call dispatch once on mount', () => {
+    renderComponent();
+    expect(mockedUseDispatch).toHaveBeenCalledTimes(1);
   });
 
-  it('should show message if there are no products', async () => {
-    mockedUseSelector.mockReturnValue(false);
-    mockedUseDispatch.mockReturnValue(jest.fn());
-    render();
-    expect(screen.queryByTestId('made-in-alfa-product')).toBeNull();
-    expect(await screen.findByText('Товар не найден')).toBeInTheDocument();
+  it('should show skeleton while fetching data', () => {
+    mockedUseSelector.mockReturnValue({ isLoading: true, products: [] });
+    renderComponent();
+    expect(screen.getAllByTestId('card-skeleton')).not.toHaveLength(0);
+  });
+
+  it('should show products after fetching succeeded', () => {
+    mockedUseSelector.mockReturnValue({ isLoading: false, products: testingProducts });
+    renderComponent();
+    expect(screen.getAllByTestId('made-in-alfa-product')).not.toHaveLength(0);
+  });
+
+  it('should show message if there are no products found', () => {
+    renderComponent();
+    expect(screen.getByTestId('no-products')).toBeInTheDocument();
+  });
+});
+
+describe('Made-in-Alfa PAGE with Router', () => {
+  const pagePath = '/made-in-alfa';
+  const renderComponent = () => renderWithRouterAndProvider(null, pagePath);
+
+  it('should be rendered as page with router', () => {
+    renderComponent();
+    expect(screen.getByTestId('made-in-alfa-page')).toBeInTheDocument();
+  });
+
+  it('should render title and subtitle', () => {
+    renderComponent();
+    expect(screen.getByTestId('page-title')).toBeInTheDocument();
+    expect(screen.getByTestId('page-subtitle')).toBeInTheDocument();
   });
 });

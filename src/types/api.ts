@@ -23,4 +23,19 @@ type ProductsGroup = {
   products: ProductType[];
 };
 
-export { ProductsGroup, ProductType as Product };
+type CartItemOptionsType = Record<string, string | number | undefined>;
+
+type CartItemType = {
+  title: string;
+  imageURL: string;
+  options?: CartItemOptionsType;
+  quantity: number;
+  price: number;
+};
+
+export {
+  ProductsGroup,
+  ProductType as Product,
+  CartItemType,
+  CartItemOptionsType,
+};

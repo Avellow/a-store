@@ -4,15 +4,16 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { getProduct } from '../../api/astore';
 import { Gallery, ProductSkeleton } from '../../components';
-import { ProductType } from '../../types/api';
+import { CartItemType, CartItemOptionsType, ProductType } from '../../types/api';
 import { NotFound } from '../NotFound/NotFound';
 import Page from '../Page';
 import styles from './Product.module.css';
 import { ConfigForm } from '../../components/';
 import { formDescription } from '../../vendor/constants';
-import { SelectOptions } from '../../components/ConfigForm/ConfigForm.props';
+import { ProductConfigOptionsType } from '../../components/ConfigForm/ConfigForm.props';
 import { notificationsActions } from '../../store/notifications';
 import { useAppDispatch } from '../../store';
+import { cartActions } from '../../store/cart';
 
 export const Product = (): JSX.Element => {
 
@@ -53,11 +54,24 @@ export const Product = (): JSX.Element => {
     );
   };
 
-  const productOptions: SelectOptions = {
+  const productOptions: ProductConfigOptionsType = {
     sizes: product.sizes,
     colors: product.colors,
     models: product.models,
     stickerNumbers: product.stickerNumbers
+  };
+
+  const handleAddProduct = (options: CartItemOptionsType) => {
+
+    const item: CartItemType = {
+      title: product.title,
+      price: product.price,
+      imageURL: product.preview,
+      quantity: 1,
+      options,
+    };
+
+    dispatch(cartActions.addItem(item));
   };
 
   return (
@@ -94,6 +108,7 @@ export const Product = (): JSX.Element => {
         </Typography.Title>
         <ConfigForm
           productOptions={productOptions}
+          onConfirm={handleAddProduct}
         />
         <Typography.Text weight='bold' view='primary-small' className={styles.description} tag='p'>
           {formDescription(product.description)}

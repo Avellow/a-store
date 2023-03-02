@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home component Home snapshot 1`] = `
+exports[`Home component snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -52,52 +52,46 @@ Object {
           </button>
         </header>
         <main
-          class="blocks body"
+          class="blocks page body"
         >
-          <div
-            class="grid__row_1gt5e grid__component_xpkmx grid__between_xpkmx row"
+          <a
+            class="linkBlock"
+            data-testid="made-in-alfa-block-link"
+            href="/made-in-alfa"
           >
             <div
-              class="grid__col_1gt5e grid__component_17rb3 grid__width-mobile-12_17rb3 grid__width-tablet-6_17rb3 grid__width-desktop-6_17rb3"
+              class="imgWrapper"
             >
-              <a
-                class="linkBlock"
-                data-testid="made-in-alfa-block-link"
-                href="/made-in-alfa"
+              <img
+                alt="ссылка"
+                src="/img/frame46.jpeg"
+              />
+              <h2
+                class="typography__component_h1nzy title typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
               >
-                <div
-                  class="imgWrapper"
-                  style="background: url(/img/frame46.jpeg) top; background-size: cover;"
-                >
-                  <h2
-                    class="typography__component_h1nzy typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
-                  >
-                    Сделано в Альфе
-                  </h2>
-                </div>
-              </a>
+                Сделано в Альфе
+              </h2>
             </div>
+          </a>
+          <a
+            class="linkBlock"
+            data-testid="your-design-block-link"
+            href="/your-design"
+          >
             <div
-              class="grid__col_1gt5e grid__component_17rb3 grid__width-mobile-12_17rb3 grid__width-tablet-6_17rb3 grid__width-desktop-6_17rb3"
+              class="imgWrapper"
             >
-              <a
-                class="linkBlock"
-                data-testid="your-design-block-link"
-                href="/your-design"
+              <img
+                alt="ссылка"
+                src="/img/frame45.jpeg"
+              />
+              <h2
+                class="typography__component_h1nzy title typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
               >
-                <div
-                  class="imgWrapper"
-                  style="background: url(/img/frame45.jpeg) top; background-size: cover;"
-                >
-                  <h2
-                    class="typography__component_h1nzy typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
-                  >
-                    Свой дизайн
-                  </h2>
-                </div>
-              </a>
+                Свой дизайн
+              </h2>
             </div>
-          </div>
+          </a>
         </main>
         <footer
           class="footer footer"
@@ -160,52 +154,46 @@ Object {
         </button>
       </header>
       <main
-        class="blocks body"
+        class="blocks page body"
       >
-        <div
-          class="grid__row_1gt5e grid__component_xpkmx grid__between_xpkmx row"
+        <a
+          class="linkBlock"
+          data-testid="made-in-alfa-block-link"
+          href="/made-in-alfa"
         >
           <div
-            class="grid__col_1gt5e grid__component_17rb3 grid__width-mobile-12_17rb3 grid__width-tablet-6_17rb3 grid__width-desktop-6_17rb3"
+            class="imgWrapper"
           >
-            <a
-              class="linkBlock"
-              data-testid="made-in-alfa-block-link"
-              href="/made-in-alfa"
+            <img
+              alt="ссылка"
+              src="/img/frame46.jpeg"
+            />
+            <h2
+              class="typography__component_h1nzy title typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
             >
-              <div
-                class="imgWrapper"
-                style="background: url(/img/frame46.jpeg) top; background-size: cover;"
-              >
-                <h2
-                  class="typography__component_h1nzy typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
-                >
-                  Сделано в Альфе
-                </h2>
-              </div>
-            </a>
+              Сделано в Альфе
+            </h2>
           </div>
+        </a>
+        <a
+          class="linkBlock"
+          data-testid="your-design-block-link"
+          href="/your-design"
+        >
           <div
-            class="grid__col_1gt5e grid__component_17rb3 grid__width-mobile-12_17rb3 grid__width-tablet-6_17rb3 grid__width-desktop-6_17rb3"
+            class="imgWrapper"
           >
-            <a
-              class="linkBlock"
-              data-testid="your-design-block-link"
-              href="/your-design"
+            <img
+              alt="ссылка"
+              src="/img/frame45.jpeg"
+            />
+            <h2
+              class="typography__component_h1nzy title typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
             >
-              <div
-                class="imgWrapper"
-                style="background: url(/img/frame45.jpeg) top; background-size: cover;"
-              >
-                <h2
-                  class="typography__component_h1nzy typography__styrene-medium_qohs3 typography__bold_h1nzy typography__primary_1faea"
-                >
-                  Свой дизайн
-                </h2>
-              </div>
-            </a>
+              Свой дизайн
+            </h2>
           </div>
-        </div>
+        </a>
       </main>
       <footer
         class="footer footer"

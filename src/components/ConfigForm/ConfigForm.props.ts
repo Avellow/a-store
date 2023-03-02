@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-import { ProductType } from "../../types/api";
+import { CartItemOptionsType, ProductType } from "../../types/api";
 
-type SelectOptions = Pick<
+type ProductConfigOptionsType = Pick<
   ProductType,
   "sizes" | "colors" | "models" | "stickerNumbers"
 >;
@@ -12,7 +12,8 @@ type FormProps = DetailedHTMLProps<
 >;
 
 type ConfigFormProps = FormProps & {
-  productOptions: SelectOptions;
+  productOptions: ProductConfigOptionsType;
+  onConfirm?: (config: CartItemOptionsType) => void;
 };
 
-export { ConfigFormProps, SelectOptions };
+export { ConfigFormProps, ProductConfigOptionsType };
