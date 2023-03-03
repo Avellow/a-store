@@ -2,12 +2,16 @@ import { IconButton } from '@alfalab/core-components/icon-button';
 import { Circle } from '@alfalab/core-components/icon-view/circle';
 import { ShoppingBagMIcon } from '@alfalab/icons-glyph/ShoppingBagMIcon';
 import { Badge } from '@alfalab/core-components/badge';
+import { useEffect, useState } from 'react';
+import cn from 'classnames';
 
 import styles from './CartButton.module.css';
 import { redColor, whiteColor } from '../../vendor/constants';
 import { CartButtonProps } from './CartButton.props';
 
-export const CartButton = ({ goodsQuantity, ...restProps }: CartButtonProps): JSX.Element => {
+let lastQuantity = 0;
+
+export const CartButton = ({ goodsQuantity, className, ...restProps }: CartButtonProps): JSX.Element => {
   const CartIconView = () => (
     <Circle
       size={80}
@@ -19,11 +23,24 @@ export const CartButton = ({ goodsQuantity, ...restProps }: CartButtonProps): JS
     </Circle>
   );
 
+  const [animantion, setAnimation] = useState<0 | 1>(0);
+
+  useEffect(() => {
+    if (lastQuantity !== goodsQuantity) {
+      lastQuantity = goodsQuantity;
+      setAnimation(1);
+    }
+  }, [goodsQuantity]);
+
   return (
     <IconButton
-      className={styles.button}
+      key={goodsQuantity}
+
+      className={cn(className, styles.button)}
       icon={CartIconView}
       {...restProps}
+
+      data-animation={animantion}
     />
   );
 };
