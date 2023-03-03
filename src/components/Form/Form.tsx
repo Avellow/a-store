@@ -31,14 +31,13 @@ const makeInputProps = (label: string, placeholder?: string): InputProps => ({
 const schema = yup.object({
   name: yup.string().max(100).required(mustBeFilled),
   email: yup.string().email(emailError).required(mustBeFilled),
-  phone: yup.string().matches(phoneRegExp, phoneNumberError).required(mustBeFilled),
+  phone: yup.string().required(mustBeFilled).matches(phoneRegExp, phoneNumberError),
   address: yup.string().max(100),
   delivery: yup.string().oneOf(Object.values(DeliveryEnum)).required(deliveryTypeError),
   promo: yup.string().max(100),
   privacyPolicy: yup.boolean().isTrue().required(confirmError),
   comment: yup.string().max(200),
   payment: yup.string().oneOf(Object.values(PaymentMethodsEnum)).required(paymentMethodError),
-
 }).required();
 type FormData = yup.InferType<typeof schema>;
 
