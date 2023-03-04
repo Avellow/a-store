@@ -8,7 +8,7 @@ import { SideCart } from '../components';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../store';
 import { isCartHasItemsSelector, itemsQuantitySelector } from '../store/cart';
-import { OrderPanel } from './Order/Order';
+import { OrderPanel } from '../components';
 
 const Page = ({
   children,

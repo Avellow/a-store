@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { useState } from 'react';
 import { Input, InputProps } from '@alfalab/core-components/input';
 import { PhoneInput } from '@alfalab/core-components/phone-input';
-import { RadioGroup } from '@alfalab/core-components/radio-group';
+import { RadioGroup, RadioGroupProps } from '@alfalab/core-components/radio-group';
 import { Radio } from '@alfalab/core-components/radio';
 import { Checkbox } from '@alfalab/core-components/checkbox';
 import { Textarea } from '@alfalab/core-components/textarea';
@@ -113,13 +113,13 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
         name='delivery'
         rules={{ required: deliveryTypeError }}
         render={({ field: { value, onChange }, fieldState: { error } }) => {
-          // задать вопрос, корректно ли так типизорвать
-          const handleChange = (_: unknown, payload?: { value: string }) => {
+          const handleChange: RadioGroupProps['onChange'] = (_, payload?: { value: string }) => {
             if (payload) {
               onChange(payload.value);
               onDeliveryChange && onDeliveryChange(payload.value as DeliveryEnum);
             }
           };
+
           return (
             <RadioGroup
               label='Доставка'

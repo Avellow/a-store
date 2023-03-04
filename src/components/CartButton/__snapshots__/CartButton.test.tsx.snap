@@ -7,6 +7,7 @@ Object {
     <div>
       <button
         class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button button icon-button__primary_7jncp icon-button__component_7jncp"
+        data-animation="1"
         type="button"
       >
         <span
@@ -78,6 +79,7 @@ Object {
   "container": <div>
     <button
       class="button__component_onnkc button__ghost_onnkc button__s_onnkc button__component_1qjkj button__ghost_1qjkj cc-icon-button button icon-button__primary_7jncp icon-button__component_7jncp"
+      data-animation="1"
       type="button"
     >
       <span

@@ -14,3 +14,4 @@ export * from "./CartItem/CartItem";
 export * from "./Divider/Divider";
 export * from "./SideCart/SideCart";
 export * from "./Form/Form";
+export * from "./OrderPanel/OrderPanel";
