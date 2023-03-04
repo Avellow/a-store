@@ -14,10 +14,15 @@
 }
 
 .description {
+  font-family: var(--my-font-family);
   padding-right: 50px;
   line-height: 1.5;
   margin-top: 30px;
   white-space: pre-line;
+}
+
+.price {
+  font-family: var(--my-font-family);
 }
 
 @media screen and (max-width: 770px) {

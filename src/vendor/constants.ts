@@ -1,3 +1,5 @@
+import { DeliveryEnum } from "../page-components/Order/delivery.reducer";
+
 // картинки для главной страницы
 export const leftImageUrl = "/img/frame46.jpeg";
 export const rightImageUrl = "/img/frame45.jpeg";
@@ -45,3 +47,23 @@ export function singularize(word: string): string {
     (r) => endings[r]
   );
 }
+
+// regex валидации email
+export const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+export const deliveryTypes = [
+  { label: "Доставка по России - 350₽", radioName: DeliveryEnum.russia },
+  { label: "Курьером по Москве - 300₽", radioName: DeliveryEnum.moscow },
+  {
+    label: "Самовывоз (пр-т Андропова, 18 корп. 3)",
+    radioName: DeliveryEnum.pickup,
+  },
+];
+
+export const paymentMethods = [
+  { label: "Банковская карта", radioName: "card" },
+  { label: "Промокод", radioName: "promocode" },
+];
+
+export const privacyPolicyAgreement =
+  "Согласен с политикой конфиденциальности и обработки персональных данных";

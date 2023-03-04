@@ -13,9 +13,6 @@
   flex: 1;
 }
 
-.details {
-}
-
 .title {
   font-style: italic;
   margin-bottom: 5px;
@@ -32,6 +29,7 @@
 
 .option {
   opacity: 0.7;
+  font-family: var(--my-font-family);
 }
 
 .options li {
@@ -55,6 +53,7 @@
 }
 
 .quantityControl {
+  font-family: var(--my-font-family);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,6 +66,7 @@
 }
 
 .price {
+  font-family: var(--my-font-family);
 }
 
 @media screen and (max-width: 675px) {

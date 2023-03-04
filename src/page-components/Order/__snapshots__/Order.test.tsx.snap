@@ -1,0 +1,1022 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order component view should be rendered 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="order"
+      >
+        <form
+          class="form form"
+          data-test-id="form"
+        >
+          <div
+            class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+          >
+            <div
+              class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+            >
+              <div
+                class="form-control__inputWrapper_3j482"
+              >
+                <span
+                  aria-hidden="true"
+                  class="form-control__hiddenLabel_3j482"
+                >
+                  ФИО
+                </span>
+                <div
+                  class="form-control__label_3j482 form-control__label_tvifb label"
+                >
+                  <span
+                    class="form-control__labelInner_3j482"
+                  >
+                    ФИО
+                  </span>
+                </div>
+                <div
+                  class="form-control__input_3j482"
+                >
+                  <input
+                    aria-label="ФИО"
+                    class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                    data-test-id="name-input"
+                    name="name"
+                    placeholder="Фамилия Имя Отчество"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+          >
+            <div
+              class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+            >
+              <div
+                class="form-control__inputWrapper_3j482"
+              >
+                <span
+                  aria-hidden="true"
+                  class="form-control__hiddenLabel_3j482"
+                >
+                  e-mail
+                </span>
+                <div
+                  class="form-control__label_3j482 form-control__label_tvifb label"
+                >
+                  <span
+                    class="form-control__labelInner_3j482"
+                  >
+                    e-mail
+                  </span>
+                </div>
+                <div
+                  class="form-control__input_3j482"
+                >
+                  <input
+                    aria-label="e-mail"
+                    class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                    data-test-id="email-input"
+                    name="email"
+                    placeholder="example@site.ru"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+          >
+            <div
+              class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+            >
+              <div
+                class="form-control__inputWrapper_3j482"
+              >
+                <span
+                  aria-hidden="true"
+                  class="form-control__hiddenLabel_3j482"
+                >
+                  Номер телефона
+                </span>
+                <div
+                  class="form-control__label_3j482 form-control__label_tvifb label"
+                >
+                  <span
+                    class="form-control__labelInner_3j482"
+                  >
+                    Номер телефона
+                  </span>
+                </div>
+                <div
+                  class="form-control__input_3j482"
+                >
+                  <input
+                    aria-label="Номер телефона"
+                    class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                    data-test-id="phone-input"
+                    name="phoneNumber"
+                    placeholder="+7 000 000-00-00"
+                    type="tel"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+          >
+            <div
+              class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+            >
+              <div
+                class="form-control__inputWrapper_3j482"
+              >
+                <span
+                  aria-hidden="true"
+                  class="form-control__hiddenLabel_3j482"
+                >
+                  Адрес (если выбран самовывоз — оставьте поле пустым)
+                </span>
+                <div
+                  class="form-control__label_3j482 form-control__label_tvifb label"
+                >
+                  <span
+                    class="form-control__labelInner_3j482"
+                  >
+                    Адрес (если выбран самовывоз — оставьте поле пустым)
+                  </span>
+                </div>
+                <div
+                  class="form-control__input_3j482"
+                >
+                  <input
+                    aria-label="Адрес (если выбран самовывоз — оставьте поле пустым)"
+                    class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                    data-test-id="address-input"
+                    name="address"
+                    placeholder="Индекс, город, улица, дом, квартира"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="radio-group__component_h0fij radio-group__radio_h0fij radio-group__vertical_h0fij radioGroup"
+            data-test-id="delivery-radio"
+          >
+            <span
+              class="radio-group__label_h0fij"
+            >
+              Доставка
+            </span>
+            <div
+              class="radio-group__radioList_h0fij"
+            >
+              <label
+                class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+              >
+                <input
+                  data-test-id="radio-russia"
+                  type="radio"
+                  value="russia"
+                />
+                <span
+                  class="radio__circle_ajohh"
+                />
+                <span
+                  class="radio__content_ajohh"
+                >
+                  <span
+                    class="radio__label_ajohh"
+                  >
+                    Доставка по России - 350₽
+                  </span>
+                </span>
+              </label>
+              <label
+                class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+              >
+                <input
+                  data-test-id="radio-moscow"
+                  type="radio"
+                  value="moscow"
+                />
+                <span
+                  class="radio__circle_ajohh"
+                />
+                <span
+                  class="radio__content_ajohh"
+                >
+                  <span
+                    class="radio__label_ajohh"
+                  >
+                    Курьером по Москве - 300₽
+                  </span>
+                </span>
+              </label>
+              <label
+                class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+              >
+                <input
+                  data-test-id="radio-pickup"
+                  type="radio"
+                  value="pickup"
+                />
+                <span
+                  class="radio__circle_ajohh"
+                />
+                <span
+                  class="radio__content_ajohh"
+                >
+                  <span
+                    class="radio__label_ajohh"
+                  >
+                    Самовывоз (пр-т Андропова, 18 корп. 3)
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div
+            class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+          >
+            <div
+              class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+            >
+              <div
+                class="form-control__inputWrapper_3j482"
+              >
+                <span
+                  aria-hidden="true"
+                  class="form-control__hiddenLabel_3j482"
+                >
+                  Промокод
+                </span>
+                <div
+                  class="form-control__label_3j482 form-control__label_tvifb label"
+                >
+                  <span
+                    class="form-control__labelInner_3j482"
+                  >
+                    Промокод
+                  </span>
+                </div>
+                <div
+                  class="form-control__input_3j482"
+                >
+                  <input
+                    aria-label="Промокод"
+                    class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                    data-test-id="promo-input"
+                    name="promo"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <label
+            class="checkbox__component_1x1bs checkbox__s_1x1bs checkbox__start_1x1bs privacy"
+          >
+            <input
+              data-test-id="privacy-check"
+              type="checkbox"
+            />
+            <span
+              class="checkbox__box_1x1bs"
+            />
+            <span
+              class="checkbox__content_1x1bs"
+            >
+              <span
+                class="checkbox__label_1x1bs"
+              >
+                Согласен с политикой конфиденциальности и обработки персональных данных
+              </span>
+            </span>
+          </label>
+          <div
+            class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+          >
+            <div
+              class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+            >
+              <div
+                class="form-control__inputWrapper_3j482"
+              >
+                <span
+                  aria-hidden="true"
+                  class="form-control__hiddenLabel_3j482"
+                >
+                  Комментарий к заказу
+                </span>
+                <div
+                  class="form-control__label_3j482 form-control__label_tvifb"
+                >
+                  <span
+                    class="form-control__labelInner_3j482"
+                  >
+                    Комментарий к заказу
+                  </span>
+                </div>
+                <div
+                  class="form-control__input_3j482"
+                >
+                  <textarea
+                    autocomplete="on"
+                    class="textarea__textarea_1ndyb textarea__textarea_cdfdx textarea__l_1ndyb textarea__hasInnerLabel_1ndyb textarea__hasInnerLabel_cdfdx textarea__resizeVertical_1ndyb"
+                    data-test-id="comment-input"
+                    name="comment"
+                    rows="1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            class="paymentHint typography__primary-small_xcdcz"
+          >
+            Выберите способ оплаты «Промокод», если ваш заказ не превышает сумму промокода. Если больше — выберите оплату картой.
+          </span>
+          <div
+            class="radio-group__component_h0fij radio-group__radio_h0fij radio-group__vertical_h0fij"
+            data-test-id="payment-radio"
+          >
+            <span
+              class="radio-group__label_h0fij"
+            >
+              Способ оплаты
+            </span>
+            <div
+              class="radio-group__radioList_h0fij"
+            >
+              <label
+                class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+              >
+                <input
+                  data-test-id="radio-card"
+                  type="radio"
+                  value="card"
+                />
+                <span
+                  class="radio__circle_ajohh"
+                />
+                <span
+                  class="radio__content_ajohh"
+                >
+                  <span
+                    class="radio__label_ajohh"
+                  >
+                    Банковская карта
+                  </span>
+                </span>
+              </label>
+              <label
+                class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+              >
+                <input
+                  data-test-id="radio-promocode"
+                  type="radio"
+                  value="promocode"
+                />
+                <span
+                  class="radio__circle_ajohh"
+                />
+                <span
+                  class="radio__content_ajohh"
+                >
+                  <span
+                    class="radio__label_ajohh"
+                  >
+                    Промокод
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <button
+            class="button__component_onnkc button__m_onnkc button__component_1qjkj button__secondary_1qjkj button__block_onnkc button"
+            data-test-id="submit"
+            disabled=""
+            type="submit"
+          >
+            <span
+              class="button__text_onnkc button__stretchText_onnkc"
+            >
+              Дальше
+            </span>
+          </button>
+        </form>
+        <div
+          class="cart"
+          data-test-id="items"
+        >
+          <ul
+            class="items"
+            data-test-id="cart-items-list"
+          />
+          <hr
+            class="hr"
+          />
+          <div
+            class="amount"
+            data-test-id="total"
+          >
+            <div
+              class="price typography__primary-small_xcdcz"
+            >
+              Subtotal: 
+              <span
+                class="amount__component_96zmx"
+              >
+                0
+                <span
+                  class=""
+                >
+                   ₽
+                </span>
+              </span>
+            </div>
+            <div
+              class="price typography__primary-small_xcdcz"
+            >
+              Доставка по России
+              : 
+              <span
+                class="amount__component_96zmx"
+              >
+                350
+                <span
+                  class=""
+                >
+                   ₽
+                </span>
+              </span>
+            </div>
+            <div
+              class="total typography__primary-large_xcdcz typography__bold_xcdcz"
+            >
+              Total: 
+              <span
+                class="amount__component_96zmx amount__bold_96zmx"
+              >
+                350
+                <span
+                  class=""
+                >
+                   ₽
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="order"
+    >
+      <form
+        class="form form"
+        data-test-id="form"
+      >
+        <div
+          class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+        >
+          <div
+            class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+          >
+            <div
+              class="form-control__inputWrapper_3j482"
+            >
+              <span
+                aria-hidden="true"
+                class="form-control__hiddenLabel_3j482"
+              >
+                ФИО
+              </span>
+              <div
+                class="form-control__label_3j482 form-control__label_tvifb label"
+              >
+                <span
+                  class="form-control__labelInner_3j482"
+                >
+                  ФИО
+                </span>
+              </div>
+              <div
+                class="form-control__input_3j482"
+              >
+                <input
+                  aria-label="ФИО"
+                  class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                  data-test-id="name-input"
+                  name="name"
+                  placeholder="Фамилия Имя Отчество"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+        >
+          <div
+            class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+          >
+            <div
+              class="form-control__inputWrapper_3j482"
+            >
+              <span
+                aria-hidden="true"
+                class="form-control__hiddenLabel_3j482"
+              >
+                e-mail
+              </span>
+              <div
+                class="form-control__label_3j482 form-control__label_tvifb label"
+              >
+                <span
+                  class="form-control__labelInner_3j482"
+                >
+                  e-mail
+                </span>
+              </div>
+              <div
+                class="form-control__input_3j482"
+              >
+                <input
+                  aria-label="e-mail"
+                  class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                  data-test-id="email-input"
+                  name="email"
+                  placeholder="example@site.ru"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+        >
+          <div
+            class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+          >
+            <div
+              class="form-control__inputWrapper_3j482"
+            >
+              <span
+                aria-hidden="true"
+                class="form-control__hiddenLabel_3j482"
+              >
+                Номер телефона
+              </span>
+              <div
+                class="form-control__label_3j482 form-control__label_tvifb label"
+              >
+                <span
+                  class="form-control__labelInner_3j482"
+                >
+                  Номер телефона
+                </span>
+              </div>
+              <div
+                class="form-control__input_3j482"
+              >
+                <input
+                  aria-label="Номер телефона"
+                  class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                  data-test-id="phone-input"
+                  name="phoneNumber"
+                  placeholder="+7 000 000-00-00"
+                  type="tel"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+        >
+          <div
+            class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+          >
+            <div
+              class="form-control__inputWrapper_3j482"
+            >
+              <span
+                aria-hidden="true"
+                class="form-control__hiddenLabel_3j482"
+              >
+                Адрес (если выбран самовывоз — оставьте поле пустым)
+              </span>
+              <div
+                class="form-control__label_3j482 form-control__label_tvifb label"
+              >
+                <span
+                  class="form-control__labelInner_3j482"
+                >
+                  Адрес (если выбран самовывоз — оставьте поле пустым)
+                </span>
+              </div>
+              <div
+                class="form-control__input_3j482"
+              >
+                <input
+                  aria-label="Адрес (если выбран самовывоз — оставьте поле пустым)"
+                  class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                  data-test-id="address-input"
+                  name="address"
+                  placeholder="Индекс, город, улица, дом, квартира"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="radio-group__component_h0fij radio-group__radio_h0fij radio-group__vertical_h0fij radioGroup"
+          data-test-id="delivery-radio"
+        >
+          <span
+            class="radio-group__label_h0fij"
+          >
+            Доставка
+          </span>
+          <div
+            class="radio-group__radioList_h0fij"
+          >
+            <label
+              class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+            >
+              <input
+                data-test-id="radio-russia"
+                type="radio"
+                value="russia"
+              />
+              <span
+                class="radio__circle_ajohh"
+              />
+              <span
+                class="radio__content_ajohh"
+              >
+                <span
+                  class="radio__label_ajohh"
+                >
+                  Доставка по России - 350₽
+                </span>
+              </span>
+            </label>
+            <label
+              class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+            >
+              <input
+                data-test-id="radio-moscow"
+                type="radio"
+                value="moscow"
+              />
+              <span
+                class="radio__circle_ajohh"
+              />
+              <span
+                class="radio__content_ajohh"
+              >
+                <span
+                  class="radio__label_ajohh"
+                >
+                  Курьером по Москве - 300₽
+                </span>
+              </span>
+            </label>
+            <label
+              class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+            >
+              <input
+                data-test-id="radio-pickup"
+                type="radio"
+                value="pickup"
+              />
+              <span
+                class="radio__circle_ajohh"
+              />
+              <span
+                class="radio__content_ajohh"
+              >
+                <span
+                  class="radio__label_ajohh"
+                >
+                  Самовывоз (пр-т Андропова, 18 корп. 3)
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+        >
+          <div
+            class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+          >
+            <div
+              class="form-control__inputWrapper_3j482"
+            >
+              <span
+                aria-hidden="true"
+                class="form-control__hiddenLabel_3j482"
+              >
+                Промокод
+              </span>
+              <div
+                class="form-control__label_3j482 form-control__label_tvifb label"
+              >
+                <span
+                  class="form-control__labelInner_3j482"
+                >
+                  Промокод
+                </span>
+              </div>
+              <div
+                class="form-control__input_3j482"
+              >
+                <input
+                  aria-label="Промокод"
+                  class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
+                  data-test-id="promo-input"
+                  name="promo"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <label
+          class="checkbox__component_1x1bs checkbox__s_1x1bs checkbox__start_1x1bs privacy"
+        >
+          <input
+            data-test-id="privacy-check"
+            type="checkbox"
+          />
+          <span
+            class="checkbox__box_1x1bs"
+          />
+          <span
+            class="checkbox__content_1x1bs"
+          >
+            <span
+              class="checkbox__label_1x1bs"
+            >
+              Согласен с политикой конфиденциальности и обработки персональных данных
+            </span>
+          </span>
+        </label>
+        <div
+          class="form-control__component_3j482 form-control__component_tvifb form-control__l_3j482 form-control__block_3j482"
+        >
+          <div
+            class="field form-control__inner_3j482 form-control__inner_tvifb form-control__hasInnerLabel_3j482"
+          >
+            <div
+              class="form-control__inputWrapper_3j482"
+            >
+              <span
+                aria-hidden="true"
+                class="form-control__hiddenLabel_3j482"
+              >
+                Комментарий к заказу
+              </span>
+              <div
+                class="form-control__label_3j482 form-control__label_tvifb"
+              >
+                <span
+                  class="form-control__labelInner_3j482"
+                >
+                  Комментарий к заказу
+                </span>
+              </div>
+              <div
+                class="form-control__input_3j482"
+              >
+                <textarea
+                  autocomplete="on"
+                  class="textarea__textarea_1ndyb textarea__textarea_cdfdx textarea__l_1ndyb textarea__hasInnerLabel_1ndyb textarea__hasInnerLabel_cdfdx textarea__resizeVertical_1ndyb"
+                  data-test-id="comment-input"
+                  name="comment"
+                  rows="1"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <span
+          class="paymentHint typography__primary-small_xcdcz"
+        >
+          Выберите способ оплаты «Промокод», если ваш заказ не превышает сумму промокода. Если больше — выберите оплату картой.
+        </span>
+        <div
+          class="radio-group__component_h0fij radio-group__radio_h0fij radio-group__vertical_h0fij"
+          data-test-id="payment-radio"
+        >
+          <span
+            class="radio-group__label_h0fij"
+          >
+            Способ оплаты
+          </span>
+          <div
+            class="radio-group__radioList_h0fij"
+          >
+            <label
+              class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+            >
+              <input
+                data-test-id="radio-card"
+                type="radio"
+                value="card"
+              />
+              <span
+                class="radio__circle_ajohh"
+              />
+              <span
+                class="radio__content_ajohh"
+              >
+                <span
+                  class="radio__label_ajohh"
+                >
+                  Банковская карта
+                </span>
+              </span>
+            </label>
+            <label
+              class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
+            >
+              <input
+                data-test-id="radio-promocode"
+                type="radio"
+                value="promocode"
+              />
+              <span
+                class="radio__circle_ajohh"
+              />
+              <span
+                class="radio__content_ajohh"
+              >
+                <span
+                  class="radio__label_ajohh"
+                >
+                  Промокод
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+        <button
+          class="button__component_onnkc button__m_onnkc button__component_1qjkj button__secondary_1qjkj button__block_onnkc button"
+          data-test-id="submit"
+          disabled=""
+          type="submit"
+        >
+          <span
+            class="button__text_onnkc button__stretchText_onnkc"
+          >
+            Дальше
+          </span>
+        </button>
+      </form>
+      <div
+        class="cart"
+        data-test-id="items"
+      >
+        <ul
+          class="items"
+          data-test-id="cart-items-list"
+        />
+        <hr
+          class="hr"
+        />
+        <div
+          class="amount"
+          data-test-id="total"
+        >
+          <div
+            class="price typography__primary-small_xcdcz"
+          >
+            Subtotal: 
+            <span
+              class="amount__component_96zmx"
+            >
+              0
+              <span
+                class=""
+              >
+                 ₽
+              </span>
+            </span>
+          </div>
+          <div
+            class="price typography__primary-small_xcdcz"
+          >
+            Доставка по России
+            : 
+            <span
+              class="amount__component_96zmx"
+            >
+              350
+              <span
+                class=""
+              >
+                 ₽
+              </span>
+            </span>
+          </div>
+          <div
+            class="total typography__primary-large_xcdcz typography__bold_xcdcz"
+          >
+            Total: 
+            <span
+              class="amount__component_96zmx amount__bold_96zmx"
+            >
+              350
+              <span
+                class=""
+              >
+                 ₽
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

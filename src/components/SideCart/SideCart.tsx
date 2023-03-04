@@ -12,10 +12,12 @@ import { SideCartProps } from './SideCart.props';
 import { v1 } from 'uuid';
 import cn from 'classnames';
 
-export const SideCart = ({ className, ...props }: SideCartProps): JSX.Element => {
+export const SideCart = ({ className, onForwardClick, ...props }: SideCartProps): JSX.Element => {
 
   const items = useAppSelector(cartItemsSelector);
   const totalCartPrice = useAppSelector(totalAmountSelector);
+
+  const handleForwardClick = () => onForwardClick && onForwardClick();
 
   return (
     <SidePanelResponsive
@@ -56,7 +58,7 @@ export const SideCart = ({ className, ...props }: SideCartProps): JSX.Element =>
         >
           Total: <Amount value={totalCartPrice} currency='RUB' minority={0} />
         </Typography.Title>
-        <Button block className={styles.button}>Дальше</Button>
+        <Button block className={styles.button} onClick={handleForwardClick}>Дальше</Button>
       </SidePanelResponsive.Content>
     </SidePanelResponsive>
   );

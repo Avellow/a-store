@@ -8,6 +8,7 @@ import { SideCart } from '../components';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../store';
 import { isCartHasItemsSelector, itemsQuantitySelector } from '../store/cart';
+import { OrderPanel } from './Order/Order';
 
 const Page = ({
   children,
@@ -22,6 +23,7 @@ const Page = ({
   const itemsQuantity = useAppSelector(itemsQuantitySelector);
 
   const [isSideCartOpened, setIsSideCartOpened] = useState<boolean>(false);
+  const [isOrderOpened, setIsOrderOpened] = useState<boolean>(false);
 
   useEffect(() => {
     if (isSideCartOpened && !isCartHasItems) {
@@ -31,6 +33,13 @@ const Page = ({
 
   const handleOpenSideCart = () => setIsSideCartOpened(true);
   const handleCloseSideCart = () => setIsSideCartOpened(false);
+  const handleCloseOrder = () => setIsOrderOpened(false);
+  const handleOpenOrder = () => setIsOrderOpened(true);
+
+  const handleForwardSideCartClick = () => {
+    handleOpenOrder();
+    handleCloseSideCart();
+  };
 
   return (
     <Layout>
@@ -79,7 +88,15 @@ const Page = ({
         <SideCart
           open={isSideCartOpened}
           onClose={handleCloseSideCart}
+          onForwardClick={handleForwardSideCartClick}
         />
+
+        <OrderPanel
+          open={isOrderOpened}
+          onClose={handleCloseOrder}
+          onAddonClick={handleCloseOrder}
+        />
+
       </Layout.Body>
       <Layout.Footer />
     </Layout>

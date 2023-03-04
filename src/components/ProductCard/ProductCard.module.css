@@ -26,6 +26,7 @@
 }
 
 .subtitle {
+  font-family: var(--my-font-family);
   font-size: 12px;
   font-weight: bold;
   color: var(--color-dark-indigo-30);

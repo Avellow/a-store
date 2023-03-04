@@ -1,0 +1,38 @@
+.form {
+  font-family: var(--my-font-family);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.field {
+  background-color: white;
+  border-bottom: 1px solid black;
+  border-radius: 0 !important;
+  font-family: var(--my-font-family);
+}
+
+.label {
+  font-family: var(--my-font-family);
+  font-size: 14px;
+}
+
+.radioGroup {
+  margin: 20px 0;
+}
+
+.privacy {
+  margin: 20px 0;
+}
+
+.paymentHint {
+  margin: 20px 0 10px;
+}
+
+.button {
+  background-color: #000;
+  color: #fff;
+  margin: 40px auto 0;
+  font-family: var(--my-font-family);
+}

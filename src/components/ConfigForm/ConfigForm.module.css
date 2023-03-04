@@ -9,3 +9,7 @@
 .select {
   width: 100%;
 }
+
+.submit {
+  font-family: var(--my-font-family);
+}

@@ -26,6 +26,7 @@
   color: #fff;
   margin: 40px auto 0;
   max-width: 400px;
+  font-family: var(--my-font-family);
 }
 
 @media screen and (max-width: 750px) {
