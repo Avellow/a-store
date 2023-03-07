@@ -1,3 +1,21 @@
 .footer {
-    padding: 15px;
+  padding: 50px;
+}
+
+.rights {
+  font-family: var(--my-font-family);
+  font-weight: 500;
+  opacity: 0.5;
+  padding: 20px 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .rights {
+    font-size: 12px;
+    padding: 10px;
+  }
 }
