@@ -1,0 +1,45 @@
+.contacts {
+  font-family: var(--my-font-family);
+  padding: 0 30px;
+}
+
+.firstContact {
+  margin-top: 100px;
+}
+
+.text {
+  font-weight: 500;
+}
+
+.day {
+  font-weight: 700;
+}
+
+.margin {
+  margin-bottom: 15px;
+}
+
+.policy {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.ymap {
+  margin-top: 50px;
+  height: 400px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 500px) {
+  .contacts {
+    padding: 0 5px;
+  }
+
+  .firstContact {
+    margin-top: 30px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}

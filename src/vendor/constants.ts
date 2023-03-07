@@ -74,3 +74,19 @@ export const privacyPolicyAgreement =
   "Согласен с политикой конфиденциальности и обработки персональных данных";
 
 export const phoneRegExp = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]{7,10}$/;
+
+// контакты
+export const storePhone = "+7 906 061 60 20";
+export const storeEmail = "info@alfabankstore.ru";
+export const storeAddress = "г. Москва, пр-т Андропова, 18 корп. 3";
+export const openingHours: { day: string; time: [string, string] }[] = [
+  { day: "пн-чт", time: ["10:00", "19:00"] },
+  { day: "пт", time: ["10:00", "17:30"] },
+];
+export const paymentTypesInfo =
+  "Принимаем к оплате карты Visa, Mastercard, МИР.";
+
+export const policyTitle =
+  "Политика конфиденциальностии обработки персональных данных";
+
+export const ymapStoreCoords = [55.694586, 37.662175];

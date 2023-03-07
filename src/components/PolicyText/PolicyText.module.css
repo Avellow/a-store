@@ -1,0 +1,36 @@
+.chapters {
+  margin: 0;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.chapter::marker {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--my-font-family);
+}
+
+.rules {
+  margin: 0;
+}
+
+.rule::marker {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--my-font-family);
+}
+
+.text {
+  font-family: var(--my-font-family);
+  font-weight: 500;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .rules {
+    padding: 0;
+  }
+}
