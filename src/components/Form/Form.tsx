@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Input, InputProps } from '@alfalab/core-components/input';
 import { PhoneInput } from '@alfalab/core-components/phone-input';
 import { RadioGroup, RadioGroupProps } from '@alfalab/core-components/radio-group';
@@ -11,12 +11,19 @@ import { Textarea } from '@alfalab/core-components/textarea';
 import { Typography } from '@alfalab/core-components/typography';
 import { Button } from '@alfalab/core-components/button';
 import cn from 'classnames';
+import axios from 'axios';
 
 import styles from './Form.module.css';
 import { FormProps } from './Form.props';
-import { confirmError, deliveryTypeError, emailError, mustBeFilled, paymentMethodError, phoneNumberError } from '../../vendor/errorMessages';
+import { deliveryTypeError, emailError, mustBeFilled, paymentMethodError, phoneNumberError } from '../../vendor/errorMessages';
 import { deliveryTypes, paymentMethods, PaymentMethodsEnum, phoneRegExp, privacyPolicyAgreement } from '../../vendor/constants';
 import { DeliveryEnum } from '../../page-components/Order/delivery.reducer';
+import { createOrder } from '../../api/astore';
+import { useAppDispatch, useAppSelector } from '../../store';
+import { cartActions, cartItemsSelector } from '../../store/cart';
+import { notificationsActions } from '../../store/notifications';
+import { OrderType } from '../../types/api';
+import { formProductForOrder } from '../../vendor/formProductsForOrder';
 
 const makeInputProps = (label: string, placeholder?: string): InputProps => ({
   label,
@@ -33,11 +40,9 @@ const schema = yup.object({
   email: yup.string().email(emailError).required(mustBeFilled),
   phone: yup.string().required(mustBeFilled).matches(phoneRegExp, phoneNumberError),
   address: yup.string().max(100),
-  delivery: yup.string().oneOf(Object.values(DeliveryEnum)).required(deliveryTypeError),
-  promo: yup.string().max(100),
-  privacyPolicy: yup.boolean().isTrue().required(confirmError),
+  deliveryType: yup.string().oneOf(Object.values(DeliveryEnum)).required(deliveryTypeError),
   comment: yup.string().max(200),
-  payment: yup.string().oneOf(Object.values(PaymentMethodsEnum)).required(paymentMethodError),
+  paymentType: yup.string().oneOf(Object.values(PaymentMethodsEnum)).required(paymentMethodError),
 }).required();
 type FormData = yup.InferType<typeof schema>;
 
@@ -48,23 +53,52 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
     control,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { isDirty, errors },
-    getFieldState
+    getFieldState,
+    reset
   } = useForm<FormData>({
     mode: 'all',
     resolver: yupResolver(schema)
   });
 
   const [isPrivacyChecked, setIsPrivacyChecked] = useState(false);
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector(cartItemsSelector);
+
+  const productsToOrder = useMemo(() => cartItems.map(formProductForOrder), [cartItems]);
+
   const handleChangePrivacyChecked = () => setIsPrivacyChecked(!isPrivacyChecked);
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(errors)
-    console.log(data)
-  }
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    const orderData: OrderType = { ...data, products: productsToOrder }
+
+    try {
+      const res = await createOrder(orderData);
+
+      if (res.statusText === 'OK') {
+        dispatch(notificationsActions.success({
+          title: 'Заказ создан', subtitle: 'Детали заказа будут высланы на email'
+        }));
+        reset();
+        dispatch(cartActions.resetCart());
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error) || error instanceof Error) {
+        dispatch(notificationsActions.error({
+          title: 'Произошла ошибка',
+          subtitle: error.message,
+        }));
+      } else {
+        dispatch(notificationsActions.error({
+          title: 'Неизвестная ошибка!',
+          subtitle: 'Попробуйте позже',
+        }));
+      }
+    }
+  };
 
   const isFieldCorrect = (fieldName: keyof FormData): boolean => {
     return getFieldState(fieldName).isDirty && !getFieldState(fieldName).error
-  }
+  };
 
   return (
     <form className={cn(className, styles.form)} onSubmit={handleSubmit(onSubmit)} data-test-id='form'>
@@ -110,7 +144,7 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
       <Controller
         control={control}
-        name='delivery'
+        name='deliveryType'
         rules={{ required: deliveryTypeError }}
         render={({ field: { value, onChange }, fieldState: { error } }) => {
           const handleChange: RadioGroupProps['onChange'] = (_, payload?: { value: string }) => {
@@ -147,7 +181,6 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
       <Input
         {...makeInputProps('Промокод')}
-        {...register('promo')}
 
         dataTestId='promo-input'
       />
@@ -179,7 +212,7 @@ export const Form = ({ className, onDeliveryChange }: FormProps): JSX.Element =>
 
       <Controller
         control={control}
-        name='payment'
+        name='paymentType'
         rules={{ required: paymentMethodError }}
         render={({ field: { value, onChange }, fieldState: { error } }) => {
           const handleChange = (_: unknown, payload?: { value: string }) => {

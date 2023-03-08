@@ -64,6 +64,11 @@ const decreaseQuantity: CaseReducer<
   }
 };
 
+const resetCart: CaseReducer<CartStateType> = (state) => {
+  state.items = initialState.items;
+  state.hasError = initialState.hasError;
+};
+
 const cartSlice = createSlice({
   name: CART_SLICE_NAME,
   initialState: initialState,
@@ -71,6 +76,7 @@ const cartSlice = createSlice({
     addItem,
     removeItem,
     decreaseQuantity,
+    resetCart,
   },
 });
 

@@ -1,6 +1,7 @@
 import { CartItemType } from "../../types/api";
 
 export const cartTestingItem1: CartItemType = {
+  id: 0,
   title: "Тестовое худи",
   imageURL: "https://68519498.jpg",
   quantity: 2,
@@ -13,6 +14,7 @@ export const cartTestingItem1: CartItemType = {
 };
 
 export const cartTestingItem2: CartItemType = {
+  id: 1,
   title: "Тестовый рюкзак",
   imageURL: "https://68519498.jpg",
   quantity: 3,

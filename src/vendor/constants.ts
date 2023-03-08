@@ -61,8 +61,8 @@ export const deliveryTypes = [
 ];
 
 export enum PaymentMethodsEnum {
-  card = "card",
-  promocode = "promocode",
+  card = "Банковская карта",
+  promocode = "Промокод",
 }
 
 export const paymentMethods = [

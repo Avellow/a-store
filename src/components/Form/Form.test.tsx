@@ -2,10 +2,19 @@ import { configure, render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { Form } from './Form';
+import * as reduxHooks from '../../store';
 
 configure({ testIdAttribute: 'data-test-id' });
 
+const mockedUseDispatch = jest.spyOn(reduxHooks, 'useAppDispatch');
+const mockedUseSelector = jest.spyOn(reduxHooks, 'useAppSelector');
+
 describe('form component', () => {
+
+  beforeEach(() => {
+    mockedUseDispatch.mockReturnValue(jest.fn());
+    mockedUseSelector.mockReturnValue([]);
+  })
 
   it('should be rendered', () => {
     expect(render(<Form />)).toMatchSnapshot();

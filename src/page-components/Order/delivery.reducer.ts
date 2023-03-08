@@ -1,7 +1,7 @@
 export enum DeliveryEnum {
-  pickup = "pickup",
-  moscow = "moscow",
-  russia = "russia",
+  pickup = "Самовывоз (пр-т Андропова, 18 корп. 3)",
+  moscow = "Курьером по Москве — 300₽",
+  russia = "Доставка по России — 350₽",
 }
 
 interface ChangeDeliveryAction {
