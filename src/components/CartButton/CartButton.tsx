@@ -23,7 +23,7 @@ export const CartButton = ({ goodsQuantity, className, ...restProps }: CartButto
     </Circle>
   );
 
-  const [animantion, setAnimation] = useState<0 | 1>(0);
+  const [animation, setAnimation] = useState<0 | 1>(0);
 
   useEffect(() => {
     if (lastQuantity !== goodsQuantity) {
@@ -40,7 +40,7 @@ export const CartButton = ({ goodsQuantity, className, ...restProps }: CartButto
       icon={CartIconView}
       {...restProps}
 
-      data-animation={animantion}
+      data-animation={animation}
     />
   );
 };
