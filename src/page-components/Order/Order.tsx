@@ -2,9 +2,6 @@ import { useReducer } from 'react';
 import { v1 } from 'uuid';
 import { Typography } from '@alfalab/core-components/typography';
 import { Amount } from '@alfalab/core-components/amount';
-import { ModalResponsive } from '@alfalab/core-components/modal/responsive';
-import { ModalResponsiveProps } from '@alfalab/core-components/modal/typings';
-import { ArrowBackMIcon } from '@alfalab/icons-glyph/ArrowBackMIcon';
 
 import { useAppSelector } from '../../store';
 import { cartItemsSelector, totalAmountSelector } from '../../store/cart';
@@ -53,28 +50,5 @@ export const Order = (): JSX.Element => {
       </div>
 
     </div>
-  );
-};
-
-
-export const OrderPanel = (
-  { onAddonClick, ...props }: ModalResponsiveProps & { onAddonClick?: () => void }
-): JSX.Element => {
-
-  const handleAddonClick = () => onAddonClick && onAddonClick();
-
-  return (
-    <ModalResponsive fullscreen {...props}>
-      <ModalResponsive.Header
-        hasCloser
-        title='Ваш заказ'
-        align='center'
-        leftAddons={<ArrowBackMIcon onClick={handleAddonClick} className={styles.backArrow} />}
-        contentClassName={styles.header}
-      />
-      <ModalResponsive.Content>
-        <Order />
-      </ModalResponsive.Content>
-    </ModalResponsive>
   );
 };

@@ -272,9 +272,6 @@ Object {
             >
               Тестовый рюкзак
             </h4>
-            <ul
-              class="options"
-            />
           </div>
           <div
             class="quantityControl"
@@ -454,9 +451,6 @@ Object {
           >
             Тестовый рюкзак
           </h4>
-          <ul
-            class="options"
-          />
         </div>
         <div
           class="quantityControl"

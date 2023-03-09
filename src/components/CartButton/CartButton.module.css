@@ -1,0 +1,12 @@
+.button[data-animation="1"] {
+  animation: scale 0.7s;
+}
+
+@keyframes scale {
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

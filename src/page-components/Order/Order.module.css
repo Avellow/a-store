@@ -52,10 +52,6 @@
   font-style: italic;
 }
 
-.backArrow {
-  cursor: pointer;
-}
-
 @media screen and (max-width: 990px) {
   .order {
     flex-direction: column-reverse;

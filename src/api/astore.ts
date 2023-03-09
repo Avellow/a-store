@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ProductType, ProductsGroup } from "../types/api";
+import { ProductType, ProductsGroup, OrderType } from "../types/api";
 
 const astoreApiUrl = "http://qa-games.ru/astore";
 
@@ -26,6 +26,11 @@ export const getProduct = async (
   return response.data;
 };
 
-export const createOrder = async () => {
-  /* заглушка */
+export const createOrder = async (order: OrderType) => {
+  const response = await axios.post<OrderType>(
+    `${astoreApiUrl}/create-order`,
+    order
+  );
+
+  return response;
 };

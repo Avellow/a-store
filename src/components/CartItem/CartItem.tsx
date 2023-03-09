@@ -61,20 +61,22 @@ export const CartItem = ({ item }: CartItemProps): JSX.Element => {
             {title}
           </Typography.TitleResponsive>
 
-          <ul className={styles.options}>
-            {optionsEntries && optionsEntries.map(([name, value]) => (
-              <li key={name}>
-                <Typography.Text
-                  view='primary-small'
-                  weight='bold'
-                  className={styles.option}
-                  dataTestId={`${name}-option`}
-                >
-                  {translateToRu(name)}: {translateToRu(`${value}`)}
-                </Typography.Text>
-              </li>
-            ))}
-          </ul>
+          {!!optionsEntries?.length && (
+            <ul className={styles.options}>
+              {optionsEntries.map(([name, value]) => (
+                <li key={name}>
+                  <Typography.Text
+                    view='primary-small'
+                    weight='bold'
+                    className={styles.option}
+                    dataTestId={`${name}-option`}
+                  >
+                    {translateToRu(name)}: {translateToRu(`${value}`)}
+                  </Typography.Text>
+                </li>
+              ))}
+            </ul>
+          )}
 
         </div>
         <div className={styles.quantityControl}>

@@ -8,7 +8,7 @@ import { SideCart } from '../components';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../store';
 import { isCartHasItemsSelector, itemsQuantitySelector } from '../store/cart';
-import { OrderPanel } from './Order/Order';
+import { OrderPanel } from '../components';
 
 const Page = ({
   children,
@@ -26,10 +26,12 @@ const Page = ({
   const [isOrderOpened, setIsOrderOpened] = useState<boolean>(false);
 
   useEffect(() => {
-    if (isSideCartOpened && !isCartHasItems) {
-      setIsSideCartOpened(false);
+    // закрывает модалки если корзина пуста
+    if ((isSideCartOpened || isOrderOpened) && !isCartHasItems) {
+      handleCloseSideCart();
+      handleCloseOrder();
     }
-  }, [isSideCartOpened, isCartHasItems]);
+  }, [isSideCartOpened, isCartHasItems, isOrderOpened]);
 
   const handleOpenSideCart = () => setIsSideCartOpened(true);
   const handleCloseSideCart = () => setIsSideCartOpened(false);

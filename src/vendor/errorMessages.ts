@@ -20,3 +20,5 @@ export const phoneNumberError = "Проверьте номер на коррек
 export const paymentMethodError = "Выберите способ оплаты";
 
 export const deliveryTypeError = "Выберите способ получения заказа";
+
+export const confirmError = "Подтвердите Ваше согласие";

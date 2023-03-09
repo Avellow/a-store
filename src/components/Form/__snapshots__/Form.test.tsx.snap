@@ -62,7 +62,7 @@ Object {
                 aria-hidden="true"
                 class="form-control__hiddenLabel_3j482"
               >
-                e-mail
+                email
               </span>
               <div
                 class="form-control__label_3j482 form-control__label_tvifb label"
@@ -70,14 +70,14 @@ Object {
                 <span
                   class="form-control__labelInner_3j482"
                 >
-                  e-mail
+                  email
                 </span>
               </div>
               <div
                 class="form-control__input_3j482"
               >
                 <input
-                  aria-label="e-mail"
+                  aria-label="email"
                   class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                   data-test-id="email-input"
                   name="email"
@@ -120,7 +120,7 @@ Object {
                   aria-label="Номер телефона"
                   class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                   data-test-id="phone-input"
-                  name="phoneNumber"
+                  name="phone"
                   placeholder="+7 000 000-00-00"
                   type="tel"
                   value=""
@@ -185,9 +185,9 @@ Object {
               class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
             >
               <input
-                data-test-id="radio-russia"
+                data-test-id="radio-Доставка по России — 350₽"
                 type="radio"
-                value="russia"
+                value="Доставка по России — 350₽"
               />
               <span
                 class="radio__circle_ajohh"
@@ -206,9 +206,9 @@ Object {
               class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
             >
               <input
-                data-test-id="radio-moscow"
+                data-test-id="radio-Курьером по Москве — 300₽"
                 type="radio"
-                value="moscow"
+                value="Курьером по Москве — 300₽"
               />
               <span
                 class="radio__circle_ajohh"
@@ -227,9 +227,9 @@ Object {
               class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
             >
               <input
-                data-test-id="radio-pickup"
+                data-test-id="radio-Самовывоз (пр-т Андропова, 18 корп. 3)"
                 type="radio"
-                value="pickup"
+                value="Самовывоз (пр-т Андропова, 18 корп. 3)"
               />
               <span
                 class="radio__circle_ajohh"
@@ -277,7 +277,6 @@ Object {
                   aria-label="Промокод"
                   class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                   data-test-id="promo-input"
-                  name="promo"
                   type="text"
                   value=""
                 />
@@ -364,9 +363,9 @@ Object {
               class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
             >
               <input
-                data-test-id="radio-card"
+                data-test-id="radio-Банковская карта"
                 type="radio"
-                value="card"
+                value="Банковская карта"
               />
               <span
                 class="radio__circle_ajohh"
@@ -385,9 +384,9 @@ Object {
               class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
             >
               <input
-                data-test-id="radio-promocode"
+                data-test-id="radio-Промокод"
                 type="radio"
-                value="promocode"
+                value="Промокод"
               />
               <span
                 class="radio__circle_ajohh"
@@ -477,7 +476,7 @@ Object {
               aria-hidden="true"
               class="form-control__hiddenLabel_3j482"
             >
-              e-mail
+              email
             </span>
             <div
               class="form-control__label_3j482 form-control__label_tvifb label"
@@ -485,14 +484,14 @@ Object {
               <span
                 class="form-control__labelInner_3j482"
               >
-                e-mail
+                email
               </span>
             </div>
             <div
               class="form-control__input_3j482"
             >
               <input
-                aria-label="e-mail"
+                aria-label="email"
                 class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                 data-test-id="email-input"
                 name="email"
@@ -535,7 +534,7 @@ Object {
                 aria-label="Номер телефона"
                 class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                 data-test-id="phone-input"
-                name="phoneNumber"
+                name="phone"
                 placeholder="+7 000 000-00-00"
                 type="tel"
                 value=""
@@ -600,9 +599,9 @@ Object {
             class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
           >
             <input
-              data-test-id="radio-russia"
+              data-test-id="radio-Доставка по России — 350₽"
               type="radio"
-              value="russia"
+              value="Доставка по России — 350₽"
             />
             <span
               class="radio__circle_ajohh"
@@ -621,9 +620,9 @@ Object {
             class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
           >
             <input
-              data-test-id="radio-moscow"
+              data-test-id="radio-Курьером по Москве — 300₽"
               type="radio"
-              value="moscow"
+              value="Курьером по Москве — 300₽"
             />
             <span
               class="radio__circle_ajohh"
@@ -642,9 +641,9 @@ Object {
             class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
           >
             <input
-              data-test-id="radio-pickup"
+              data-test-id="radio-Самовывоз (пр-т Андропова, 18 корп. 3)"
               type="radio"
-              value="pickup"
+              value="Самовывоз (пр-т Андропова, 18 корп. 3)"
             />
             <span
               class="radio__circle_ajohh"
@@ -692,7 +691,6 @@ Object {
                 aria-label="Промокод"
                 class="input__input_1j8wk input__input_n0erl input__l_1j8wk input__hasInnerLabel_1j8wk input__hasInnerLabel_n0erl"
                 data-test-id="promo-input"
-                name="promo"
                 type="text"
                 value=""
               />
@@ -779,9 +777,9 @@ Object {
             class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
           >
             <input
-              data-test-id="radio-card"
+              data-test-id="radio-Банковская карта"
               type="radio"
-              value="card"
+              value="Банковская карта"
             />
             <span
               class="radio__circle_ajohh"
@@ -800,9 +798,9 @@ Object {
             class="radio__container_ajohh radio__s_ajohh radio__start_ajohh radio-group__radio_h0fij"
           >
             <input
-              data-test-id="radio-promocode"
+              data-test-id="radio-Промокод"
               type="radio"
-              value="promocode"
+              value="Промокод"
             />
             <span
               class="radio__circle_ajohh"

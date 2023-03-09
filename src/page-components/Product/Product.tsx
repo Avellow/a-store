@@ -64,6 +64,7 @@ export const Product = (): JSX.Element => {
   const handleAddProduct = (options: CartItemOptionsType) => {
 
     const item: CartItemType = {
+      id: product.id,
       title: product.title,
       price: product.price,
       imageURL: product.preview,
