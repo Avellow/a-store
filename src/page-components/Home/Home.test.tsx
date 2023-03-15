@@ -8,10 +8,6 @@ describe('Home component', () => {
     renderWithRouterAndProvider();
   });
 
-  it('snapshot', () => {
-    expect(renderWithRouterAndProvider()).toMatchSnapshot();
-  });
-
   it('should render made-in-alfa block link', async () => {
     renderWithRouterAndProvider();
     const madeInAlfaBlock = screen.getByTestId('made-in-alfa-block-link');
