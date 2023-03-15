@@ -14,9 +14,6 @@ const persistor = persistStore(store);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  // СТРИКТ МОД отключен в связи с ошибкой библиотеки core-components (метод findDOMNode запрещен)
-  // необходимо выяснить, как исправить
-  /*<React.StrictMode>*/
   <Provider store={store}>
     <BrowserRouter>
       <PersistGate persistor={persistor}>
@@ -24,5 +21,4 @@ root.render(
       </PersistGate>
     </BrowserRouter>
   </Provider>
-  /*</React.StrictMode>*/
 );
